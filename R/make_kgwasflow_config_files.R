@@ -3,6 +3,7 @@
 
 library(dplyr)
 library(googlesheets4)
+library(stringr)
 library(tidyr)
 
 # Adding my Google service account credentials
@@ -23,6 +24,24 @@ varitome_metadata <- read.table(
     header = TRUE
   ) %>%
   select(Run, Sample.Name)
+
+varitome_paths <- read.table(
+    file = file.path(getwd(), "R_data", "varitome_paths.txt"),
+    sep = ',',
+    header = TRUE
+  ) %>%
+  mutate(
+    library_name = str_extract(path, "SRR\\d+"),
+    fq_read = case_when(
+      str_detect(path, "_1\\.fastq\\.gz$") ~ "fq1",
+      str_detect(path, "_2\\.fastq\\.gz$") ~ "fq2",
+      TRUE ~ NA_character_
+    )
+  ) %>%
+  pivot_wider(
+    names_from = fq_read,
+    values_from = path
+  )
 
 cedar_metadata <- read_sheet("1V2kH8G4tfYsYqnYb6bVHpGjwwkjd9le0arGBJ2o4r8s") %>%
   select(name_CW, name_original_razifard)
@@ -45,8 +64,22 @@ varitome_metadata <- varitome_metadata %>%
   slice_sample(n = 1)
 
 # Joining with the phenotype data
-samplesheet_flowers <- flower_phenotypes %>%
+flower_metadata <- flower_phenotypes %>%
   left_join(varitome_metadata, by = "accession") %>%
   drop_na()
 
 # Now I need to get it in the right format, including the full fastq paths.
+samplesheet_flowers <- flower_metadata %>%
+  select(accession, Run) %>%
+  rename(sample_name = accession, library_name = Run) %>%
+  left_join(varitome_paths, by = "library_name") %>%
+  mutate(sra = library_name)
+
+# Writing out the samplesheet
+samplesheet_flowers %>%
+  write.table(
+    file = file.path(getwd(), "kgwasflow", "config", "flowers_and_varitome_test", "samples.tsv"),
+    sep = '\t',
+    quote = FALSE,
+    row.names = FALSE
+  )
