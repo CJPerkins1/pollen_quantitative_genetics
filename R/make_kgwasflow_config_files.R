@@ -83,3 +83,30 @@ samplesheet_flowers %>%
     quote = FALSE,
     row.names = FALSE
   )
+
+# Making and saving the phenos.tsv file
+phenos_flowers <- data.frame(
+  pheno_name = "anther_pistil_ratio", 
+  pheno_path = "/home/u16/cedar/git/pollen_quantitative_genetics/kgwasflow/config/flowers_and_varitome_test/anther_pistil_ratio.pheno"
+)
+
+phenos_flowers %>%
+  write.table(
+    file = file.path(getwd(), "kgwasflow", "config", "flowers_and_varitome_test", "phenos.tsv"),
+    sep = '\t',
+    quote = FALSE,
+    row.names = FALSE
+  )
+
+# Making and saving the anther / pistil ratio phenotype file.
+phenotype_file_anther_pistil <- flower_phenotypes %>%
+  rename(accession_id = accession, phenotype_value = mean_anther_pistil_ratio) %>%
+  filter(accession_id %in% samplesheet_flowers$sample_name) # Only keeping the Varitome accessions
+
+phenotype_file_anther_pistil %>%
+  write.table(
+    file = file.path(getwd(), "kgwasflow", "config", "flowers_and_varitome_test", "anther_pistil_ratio.pheno"),
+    sep = '\t',
+    quote = FALSE,
+    row.names = FALSE
+  )
