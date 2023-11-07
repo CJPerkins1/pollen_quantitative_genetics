@@ -86,8 +86,11 @@ samplesheet_flowers %>%
 
 # Making and saving the phenos.tsv file
 phenos_flowers <- data.frame(
-  pheno_name = "anther_pistil_ratio", 
-  pheno_path = "/home/u16/cedar/git/pollen_quantitative_genetics/kgwasflow/config/flowers_and_varitome_test/anther_pistil_ratio.pheno"
+  pheno_name = c("anther_pistil_ratio", "locule_number"), 
+  pheno_path = c(
+    "/home/u16/cedar/git/pollen_quantitative_genetics/kgwasflow/config/flowers_and_varitome_test/anther_pistil_ratio.pheno",
+    "/home/u16/cedar/git/pollen_quantitative_genetics/kgwasflow/config/flowers_and_varitome_test/locule_number.pheno"
+  )
 )
 
 phenos_flowers %>%
@@ -106,6 +109,31 @@ phenotype_file_anther_pistil <- flower_phenotypes %>%
 phenotype_file_anther_pistil %>%
   write.table(
     file = file.path(getwd(), "kgwasflow", "config", "flowers_and_varitome_test", "anther_pistil_ratio.pheno"),
+    sep = '\t',
+    quote = FALSE,
+    row.names = FALSE
+  )
+
+
+# Test run: Varitome locule number ----------------------------------------
+# Using the phenotyping data from the Varitome project, located here:
+# https://solgenomics.net/ftp/varitome/GWAS/normalized_phen/
+locule_num <- read.table(
+  file = file.path(getwd(), "R_data", "varitome_locule_number_phenotype.fam"),
+  sep = '\t',
+  header = FALSE
+  ) %>%
+  select(c(1, 6)) %>%
+  rename(name_original_razifard = V1, locule = V6)
+
+locule_num <- locule_num %>%
+  left_join(cedar_metadata, by = c("name_original_razifard")) %>%
+  select(accession_id = name_CW, locule) %>%
+  drop_na()
+
+locule_num %>%
+  write.table(
+    file = file.path(getwd(), "kgwasflow", "config", "flowers_and_varitome_test", "locule_number.pheno"),
     sep = '\t',
     quote = FALSE,
     row.names = FALSE
