@@ -129,9 +129,9 @@ locule_df %>%
                      labels = chromosome_info$chr,
                      limits = c(1, 772876783),
                      expand = c(0, 0)) +
-  scale_y_continuous(breaks = seq(0, 12, 2),
-                     labels = seq(0, 12, 2),
-                     limits = c(0, 13)) +
+  scale_y_continuous(breaks = seq(0, 18, 2),
+                     labels = seq(0, 18, 2),
+                     limits = c(0, 18)) +
   labs(title = "Locule number kmers-GWAS", x = "Chromosome", y = "-log10 p-value") +
   theme_bw() +
   theme(axis.title = element_text(size = 26, face = 'bold'),
@@ -151,6 +151,45 @@ locule_df %>%
         strip.placement = "outside")
 
 ggsave(filename = file.path(getwd(), "R_plots", "locule_number_gwas.png"),
+       device = 'png',
+       width = 14,
+       height = 8,
+       dpi = 400,
+       units = 'in')
+
+locule_df %>% 
+  filter(chr == "ch02") %>%
+  ggplot(aes(x = chr_coord, y = log10_p_value)) + 
+  geom_point(size = 2, alpha = 0.2) +
+  geom_vline(data = chromosome_info, aes(xintercept = start), linewidth = 0.2, color = "gray", linetype = "dashed") +
+  geom_vline(data = chromosome_info, aes(xintercept = end), linewidth = 0.2, color = "gray", linetype = "dashed") +
+  # scale_x_continuous(breaks = chromosome_info$midpoint, 
+  #                    labels = chromosome_info$chr,
+  #                    limits = c(135000000, 139000000),
+  scale_x_continuous(limits = c(44700000, 46000000),
+                     expand = c(0, 0)) +
+  scale_y_continuous(breaks = seq(0, 18, 2),
+                     labels = seq(0, 18, 2),
+                     limits = c(0, 18)) +
+  labs(title = "Locule number kmers-GWAS", x = "Chromosome 2", y = "-log10 p-value") +
+  theme_bw() +
+  theme(axis.title = element_text(size = 26, face = 'bold'),
+        axis.text = element_text(size = 18, face = 'bold', color = 'black'),
+        axis.text.x = element_text(size = 18, face = 'bold', color = 'black'),
+        plot.title = element_text(size = 28, face = 'bold', margin = margin(0, 0, 10, 0)),
+        panel.border = element_blank(),
+        axis.line = element_line(linewidth = 1, color = 'black'),
+        axis.ticks = element_line(linewidth = 1, color = 'black'), axis.ticks.length = unit(8, 'pt'),
+        plot.margin = margin(0.5, 0.5, 0.5, 0.5, 'cm'),
+        panel.grid = element_blank(),
+        legend.position = 'right',
+        legend.title = element_text(size = 18, face = 'bold', color = 'black'),
+        legend.text = element_text(size = 14, face = 'bold', color = 'black'),
+        legend.key.width = unit(1.5, "cm"),
+        strip.background = element_blank(),
+        strip.placement = "outside")
+
+ggsave(filename = file.path(getwd(), "R_plots", "locule_number_gwas_ch02.png"),
        device = 'png',
        width = 14,
        height = 8,
