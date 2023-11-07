@@ -7,15 +7,9 @@ library(Rsamtools)
 library(stringr)
 library(ggplot2)
 
-kgwasflow_output <- read.table(
-  file = file.path(getwd(), "R_data", "flower_test_aligned_kmers.sam"),
-  sep = '\t',
-  header = FALSE
-)
-
 
 # Formatting the data -----------------------------------------------------
-# Read the SAM file
+# Read the BAM file
 kgwasflow_output <- scanBam(file = file.path(getwd(), "R_data", "flower_test_aligned_kmers.bam"))
 
 # Formatting
@@ -81,8 +75,7 @@ df %>%
         plot.title = element_text(size = 28, face = 'bold', margin = margin(0, 0, 10, 0)),
         panel.border = element_blank(),
         axis.line = element_line(linewidth = 1, color = 'black'),
-        axis.ticks = element_line(linewidth = 1, color = 'black'),
-        axis.ticks.length = unit(8, 'pt'),
+        axis.ticks = element_line(linewidth = 1, color = 'black'), axis.ticks.length = unit(8, 'pt'),
         plot.margin = margin(0.5, 0.5, 0.5, 0.5, 'cm'),
         panel.grid = element_blank(),
         legend.position = 'right',
@@ -93,6 +86,71 @@ df %>%
         strip.placement = "outside")
 
 ggsave(filename = file.path(getwd(), "R_plots", "pistil_anther_ratio_kmers_gwas.png"),
+       device = 'png',
+       width = 14,
+       height = 8,
+       dpi = 400,
+       units = 'in')
+
+
+# Making locule number plot -----------------------------------------------
+# Reading the locule bam file
+kgwasflow_locule_output <- scanBam(file = file.path(getwd(), "R_data", "locule_number_kmers_alignment.bam"))
+
+# Formatting
+locule_rname_factor <- kgwasflow_locule_output[[1]]$rname
+locule_rname_vector <- levels(locule_rname_factor)[locule_rname_factor]
+
+locule_df <- data.frame(
+  kmer_name = kgwasflow_locule_output[[1]]$qname,
+  chr = locule_rname_vector,
+  chr_coord = kgwasflow_locule_output[[1]]$pos, 
+  p_value = kgwasflow_locule_output[[1]]$qname
+)
+
+locule_df <- locule_df %>%
+  mutate(
+    kmer_name = str_extract(kmer_name, str_extract(kmer_name, "^[^_]*")),
+    chr = str_replace(chr, "SL4.0", ""),
+    p_value = as.numeric(str_extract(p_value, "(?<=_)[0-9\\.e\\-]+")),
+    log10_p_value = -log10(p_value)
+  ) 
+
+locule_df <- locule_df %>%
+  left_join(chromosome_info, by = c("chr")) %>%
+  mutate(genomic_coord = start + chr_coord)
+
+locule_df %>% 
+  ggplot(aes(x = genomic_coord, y = log10_p_value)) + 
+  geom_point(size = 2, alpha = 0.2) +
+  geom_vline(data = chromosome_info, aes(xintercept = start), linewidth = 0.2, color = "gray", linetype = "dashed") +
+  geom_vline(data = chromosome_info, aes(xintercept = end), linewidth = 0.2, color = "gray", linetype = "dashed") +
+  scale_x_continuous(breaks = chromosome_info$midpoint, 
+                     labels = chromosome_info$chr,
+                     limits = c(1, 772876783),
+                     expand = c(0, 0)) +
+  scale_y_continuous(breaks = seq(0, 12, 2),
+                     labels = seq(0, 12, 2),
+                     limits = c(0, 13)) +
+  labs(title = "Locule number kmers-GWAS", x = "Chromosome", y = "-log10 p-value") +
+  theme_bw() +
+  theme(axis.title = element_text(size = 26, face = 'bold'),
+        axis.text = element_text(size = 18, face = 'bold', color = 'black'),
+        axis.text.x = element_text(size = 18, face = 'bold', color = 'black'),
+        plot.title = element_text(size = 28, face = 'bold', margin = margin(0, 0, 10, 0)),
+        panel.border = element_blank(),
+        axis.line = element_line(linewidth = 1, color = 'black'),
+        axis.ticks = element_line(linewidth = 1, color = 'black'), axis.ticks.length = unit(8, 'pt'),
+        plot.margin = margin(0.5, 0.5, 0.5, 0.5, 'cm'),
+        panel.grid = element_blank(),
+        legend.position = 'right',
+        legend.title = element_text(size = 18, face = 'bold', color = 'black'),
+        legend.text = element_text(size = 14, face = 'bold', color = 'black'),
+        legend.key.width = unit(1.5, "cm"),
+        strip.background = element_blank(),
+        strip.placement = "outside")
+
+ggsave(filename = file.path(getwd(), "R_plots", "locule_number_gwas.png"),
        device = 'png',
        width = 14,
        height = 8,
