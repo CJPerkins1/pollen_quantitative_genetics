@@ -138,7 +138,7 @@ params:
 
   fastqc:
     # Number of threads for fastqc
-    threads: 8
+    threads: 4
     # Additional parameters for fastqc
     extra: ""
 
@@ -173,7 +173,7 @@ params:
 
   kmc:
     # Number of threads for kmc
-    threads: 8
+    threads: 16
     
     # k-mer length (should be between 15-31)
     kmer_len: 31
@@ -192,7 +192,7 @@ params:
   
   merge_kmers:
     # Number of threads for kmc
-    threads: 8
+    threads: 16
   
   # ----------------------------------------------------------------------
   #     convert_kmers_table_to_plink Params
@@ -205,7 +205,7 @@ params:
     # phenotype file will be used
     phenos: ["anther_pistil_ratio"]
     # Number of threads for kmers_table_to_bed
-    threads: 8
+    threads: 16
     # k-mer length (should be between 15-31)
     kmer_len: 31
     # Minor allele count
@@ -227,7 +227,7 @@ params:
 
   kmers_gwas:
     # Number of threads to use
-    threads: 8
+    threads: 32
 
     # Minimum percent of appearance in each strand form
     min_percent_app: 0.2
