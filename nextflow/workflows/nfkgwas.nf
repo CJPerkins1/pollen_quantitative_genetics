@@ -4,27 +4,25 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
+// Inputs
+// Check the input
+println("samplesheet: ${params.samplesheet}")
+
 params.samplesheet = "$workflow.scriptDir/../samplesheets/test_samplesheet.tsv"
+println("samplesheet: ${params.samplesheet}")
+params.outdir = "." // Defaults to where the script is run
 
 Channel
     .fromPath(params.samplesheet)
     .splitCsv(header: true, sep: '\t', strip: true)
-    .map { row ->
-        tuple(
-            row.accession_id,
-            path(row.fastq1, checkIfExists: true),
-            path(row.fastq2, checkIfExists: true),
-            path(row.fastqx, checkIfExists: true)
-        )
-    }
     .set { samples_ch }
 
 process FilterSamples {
     input:
-    tuple val(accession_id), path(fastq1), path(fastq2), path(fastqx) from samples_ch
+    tuple val(accession_id), path(fq1), path(fq2)
 
     output:
-    tuple val(accession_id), path(fastq1), path(fastq2), path(fastqx) into filtered_samples_ch
+    tuple val(accession_id), path(fq1), path(fq2) into filtered_samples_ch
 
     script:
     """
@@ -36,14 +34,13 @@ process FilterSamples {
 
 process ProcessFilteredSamples {
     input:
-    tuple val(accession_id), path(fastq1), path(fastq2), path(fastqx) from filtered_samples_ch
+    tuple val(accession_id), path(fq1), path(fq2) from filtered_samples_ch
 
     script:
     """
     echo "Processing sample: $accession_id"
-    echo "FASTQ1 file: $fastq1"
-    echo "FASTQ2 file: $fastq2"
-    echo "FASTQX file: $fastqx"
+    echo "FASTQ1 file: $fq1"
+    echo "FASTQ2 file: $fq2"
     """
 }
 
