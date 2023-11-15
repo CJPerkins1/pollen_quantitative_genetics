@@ -4,7 +4,7 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
-params.samplesheet = "/path/to/samplesheet.tsv"
+params.samplesheet = "/home/u16/cedar/git/pollen_quantitative_genetics/nextflow/samplesheets/test_samplesheet.tsv"
 params.outdir = "." // Defaults to where the script is run
 
 log.info """\
@@ -35,6 +35,8 @@ Channel
 process TEST_PROCESS_ONE {
     tag "TEST_PROCESS_ONE on ${meta.accession_id}"
 
+    publishDir "${params.outdir}/results/process_one", mode: 'symlink'
+
     input:
     tuple val(meta), path(fq1), path(fq2)
 
@@ -50,15 +52,17 @@ process TEST_PROCESS_ONE {
 process TEST_PROCESS_TWO {
     tag "TEST_PROCESS_TWO on ${file}"
 
+    publishDir "${params.outdir}/results/process_two", mode: 'symlink'
+
     input:
     path file
 
     output:
-    path "${file.baseName}_echo.txt"
+    path "concatenated_files.txt"
 
     script:
     """
-    cat ${file} > ${file.baseName}_echo.txt
+    cat ${file} > concatenated_files.txt
     """
 }
 
