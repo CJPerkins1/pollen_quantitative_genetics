@@ -1,14 +1,10 @@
 /*
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     k-mers-based GWAS workflow
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
-/*
- * Pipeline input parameters
-*/
-
-params.samplesheet = "/home/u16/cedar/git/pollen_quantitative_genetics/nextflow/samplesheets/test_samplesheet.tsv"
+params.samplesheet = "/path/to/samplesheet.tsv"
 params.outdir = "." // Defaults to where the script is run
 
 log.info """\
@@ -19,63 +15,63 @@ log.info """\
     """
     .stripIndent()
 
-
 /*
- * Setting up the input channel
+ * Setting up the input channel with metadata
 */
 
 Channel
     .fromPath(params.samplesheet)
     .splitCsv(header: true, sep: '\t', strip: true)
-    .view { row -> "${row[0]}, ${row[1]}, ${row[2]}" }
-    .set { samples_ch }
-
+    .map { row -> 
+        def meta = [ accession_id: row.accession_id ]
+        tuple(meta, file(row.fq1), file(row.fq2))
+    }
+    .set { samples_meta_ch }
 
 /*
  * Processes
 */
 
 process TEST_PROCESS_ONE {
-    tag "TEST_PROCESS_ONE on $accession_id"
+    tag "TEST_PROCESS_ONE on ${meta.accession_id}"
 
     input:
-    tuple val(accession_id), path(reads1), path(reads2)
+    tuple val(meta), path(fq1), path(fq2)
 
     output:
-    path "${sample_id}_test_process_one_logs"
+    path "${meta.accession_id}_output.txt"
 
     script:
     """
-    mkdir ${sample_id}_test_process_one_logs
-    echo ${sample_id} ${reads1} ${reads2} > ${sample_id}_output.txt
+    echo "${meta.accession_id} ${fq1} ${fq2}" > ${meta.accession_id}_output.txt
     """
 }
 
 process TEST_PROCESS_TWO {
-    tag "TEST_PROCESS_TWO on $accession_id"
+    tag "TEST_PROCESS_TWO on ${file}"
 
     input:
-    path(reads1)
+    path file
 
     output:
-    path "test_process_two_logs"
+    path "${file.baseName}_echo.txt"
 
     script:
     """
-    echo ${reads1}
+    cat ${file} > ${file.baseName}_echo.txt
     """
 }
-
 
 /*
  * Workflow
 */
 
 workflow {
-    test_process_one_ch = TEST_PROCESS_ONE(samples_ch)
-    TEST_PROCESS_TWO(test_process_one_ch)
+    test_process_one_ch = TEST_PROCESS_ONE(samples_meta_ch)
+    TEST_PROCESS_TWO(test_process_one_ch.collect())
 }
 
 workflow.onComplete {
     log.info ( workflow.success ? "\nSuccess" : "Failure" )
 }
+
