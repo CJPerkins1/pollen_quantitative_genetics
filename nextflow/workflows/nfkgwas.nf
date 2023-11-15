@@ -33,6 +33,8 @@ Channel
 */
 
 process TEST_PROCESS_ONE {
+    conda "/home/u16/cedar/git/pollen_quantitative_genetics/nextflow/config/mamba/kmc.yaml"
+    
     tag "TEST_PROCESS_ONE on ${meta.accession_id}"
 
     publishDir "${params.outdir}/results/process_one", mode: 'symlink'
@@ -46,6 +48,7 @@ process TEST_PROCESS_ONE {
     script:
     """
     echo "${meta.accession_id} ${fq1} ${fq2}" > ${meta.accession_id}_output.txt
+    kmc --version
     """
 }
 
