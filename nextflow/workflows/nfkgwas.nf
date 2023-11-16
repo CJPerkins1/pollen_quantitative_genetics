@@ -19,29 +19,14 @@ log.info """\
  * Setting up the input channel with metadata
 */
 
-// Short format samplesheet version
-// Channel
-//     .fromPath(params.samplesheet)
-//     .splitCsv(header: true, sep: '\t', strip: true)
-//     .map { row -> 
-//         def meta = [ accession_id: row.accession_id ]
-//         tuple(meta, file(row.fq1), file(row.fq2))
-//     }
-//     .set { samples_meta_ch }
-
-// Long format samplesheet version
 Channel
     .fromPath(params.samplesheet)
     .splitCsv(header: true, sep: '\t', strip: true)
     .map { row ->
-        def meta = [
-            accession_id: row.accession_id,
-            paired_end: row.paired_end,
-            srr_id: row.SRR
-        ]
-        tuple(meta, file(row.fq)) // Create a tuple for each row
+        tuple(row.accession_id, [file: file(row.fq), paired_end: row.paired_end, srr_id: row.srr_id])
     }
-    .groupTuple(by: [0]) // Group by accession_id (add srr_id for paired end mapping)
+    .groupTuple(by: [0])
+//    .view { "Grouped data: $it" }  // Debugging statement
     .set { samples_meta_ch }
 
 /*
@@ -52,63 +37,29 @@ Channel
 process KMC_COUNT_ONE_CANONIZED {
     conda "/home/u16/cedar/git/pollen_quantitative_genetics/nextflow/config/mamba/kmc.yaml"
 
-    tag "TEST_PROCESS_ONE on ${meta.accession_id}"
+    tag "TEST_PROCESS_ONE on ${accession_id}"
 
-    publishDir "${params.outdir}/results/kmc_count_one_canonized", mode: 'symlink'
+    publishDir "${params.outdir}/results/kmc_count_one_canonized/${accession_id}", mode: 'symlink'
 
     input:
-    tuple val(meta), path(reads)
+    tuple val(accession_id), val(file_maps)
 
     output:
-    path "${meta.accession_id}_kmers_one"
+    path "output_kmc_canon_${accession_id}*"
 
     script:
-    println("Processing accession: ${meta.accession_id}, files: ${reads.join(', ')}") // debugging
-
     // Concatenate all read paths into a single string
-    def readPaths = reads.join(' ')
+    def read_paths = file_maps.collect { it.file }.join(' ')
+
+    println("Processing accession: ${accession_id}, read paths: ${read_paths}") // debugging
+
 
     // Run kmc command
     """
-    kmc -t${task.cpus} -k31 -ci2 ${readPaths} output_kmc_canon_${meta.accession_id} ./ 1> kmc_canon.1 2> kmc_canon.2
+    kmc -t${task.cpus} -k31 -ci2 ${read_paths} output_kmc_canon_${accession_id} ./ 1> kmc_canon.1 2> kmc_canon.2
     """
 }
 
-
-// process TEST_PROCESS_ONE {
-//     conda "/home/u16/cedar/git/pollen_quantitative_genetics/nextflow/config/mamba/kmc.yaml"
-//     tag "TEST_PROCESS_ONE on ${meta.accession_id}"
-//     publishDir "${params.outdir}/results/process_one", mode: 'symlink'
-// 
-//     input:
-//     tuple val(meta), path(fq1), path(fq2)
-// 
-//     output:
-//     path "${meta.accession_id}_output.txt"
-// 
-//     script:
-//     """
-//     echo "${meta.accession_id} ${fq1} ${fq2}" > ${meta.accession_id}_output.txt
-//     kmc --version
-//     """
-// }
-// 
-// process TEST_PROCESS_TWO {
-//     tag "TEST_PROCESS_TWO on ${file}"
-// 
-//     publishDir "${params.outdir}/results/process_two", mode: 'symlink'
-// 
-//     input:
-//     path file
-// 
-//     output:
-//     path "concatenated_files.txt"
-// 
-//     script:
-//     """
-//     cat ${file} > concatenated_files.txt
-//     """
-// }
 
 /*
  * Workflow
