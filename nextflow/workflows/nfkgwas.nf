@@ -35,13 +35,13 @@ Channel
     .splitCsv(header: true, sep: '\t', strip: true)
     .map { row ->
         def meta = [
-            accession_id: row.accession,
+            accession_id: row.accession_id,
             paired_end: row.paired_end,
             srr_id: row.SRR
         ]
         tuple(meta, file(row.fq)) // Create a tuple for each row
     }
-    .groupTuple(by: [0, 2]) // Group by accession_id and srr_id
+    .groupTuple(by: [0]) // Group by accession_id (add srr_id for paired end mapping)
     .set { samples_meta_ch }
 
 /*
@@ -63,21 +63,21 @@ process KMC_COUNT_ONE_CANONIZED {
     path "${meta.accession_id}_kmers_one"
 
     script:
+    println("Processing accession: ${meta.accession_id}, files: ${reads.join(', ')}") // debugging
+
     // Concatenate all read paths into a single string
     def readPaths = reads.join(' ')
 
     // Run kmc command
     """
-    kmc -t${task.cpus} -k31 -ci2 ${readPaths} output_kmc_canon ${meta.accession_id}_kmers_one 1> kmc_canon.1 2> kmc_canon.2
+    kmc -t${task.cpus} -k31 -ci2 ${readPaths} output_kmc_canon_${meta.accession_id} ./ 1> kmc_canon.1 2> kmc_canon.2
     """
 }
 
 
 // process TEST_PROCESS_ONE {
 //     conda "/home/u16/cedar/git/pollen_quantitative_genetics/nextflow/config/mamba/kmc.yaml"
-//     
 //     tag "TEST_PROCESS_ONE on ${meta.accession_id}"
-// 
 //     publishDir "${params.outdir}/results/process_one", mode: 'symlink'
 // 
 //     input:
