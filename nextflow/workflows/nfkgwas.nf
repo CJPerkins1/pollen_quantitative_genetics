@@ -49,8 +49,6 @@ process INSTALL_KMERS_GWAS {
     """
 }
 
-
-
 // Make files of file paths for kmc input
 process MAKE_KMC_READ_PATHS_FILE {
     tag "MAKE_KMC_READ_PATHS_FILE on ${accession_id}"
@@ -80,8 +78,7 @@ process KMC_COUNT_CANONIZED {
     tuple val(accession_id), val(file_maps), path(read_paths_file)
 
     output:
-    path "output_kmc_canon_${accession_id}.kmc_suf"
-    path "output_kmc_canon_${accession_id}.kmc_pre"
+    path "."
 
     script:
     println("Processing accession: ${accession_id}, file list: ${read_paths_file}") // debugging
@@ -103,8 +100,7 @@ process KMC_COUNT_ALL {
     tuple val(accession_id), val(file_maps), path(read_paths_file)
 
     output:
-    path "output_kmc_all_${accession_id}.kmc_suf"
-    path "output_kmc_all_${accession_id}.kmc_pre"
+    path "."
 
     script:
     println("Processing accession: ${accession_id}, file list: ${read_paths_file}") // debugging
@@ -114,15 +110,45 @@ process KMC_COUNT_ALL {
     """
 }
 
+// Combine the two kmc runs
+process COMBINE_KMC_COUNT {
+    conda "/home/u16/cedar/git/pollen_quantitative_genetics/nextflow/config/conda/kmers_gwas.yaml"
+
+    tag "COMBINE_KMC_COUNT on ${accession_id}"
+
+    publishDir "${params.outdir}/results/combine_kmc_count/${accession_id}", mode: 'symlink'
+
+    input:
+    tuple val(accession_id), val(file_maps), path(read_paths_file) // read_paths_ch
+    path kmers_gwas_base_dir // kmers_gwas_paths_ch
+    path kmc_count_canonized_dir // kmc_count_canonized_ch
+    path kmc_count_all_dir // kmc_count_all_ch
+
+    output:
+    path "."
+
+    script:
+    println("Processing accession: ${accession_id}, kmers_gwas_dir: ${kmers_gwas_base_dir}, kmc_count_canonized_dir: ${kmc_count_canonized_dir}, kmc_count_all_dir: ${kmc_count_all_dir}") // debugging
+    """
+    ${kmers_gwas_base_dir}/bin/kmers_add_strand_information -c ${kmc_count_canonized_dir} -n {kmc_count_all_dir} -k 31 -o ${accession_id}_kmers_with_strand
+    """
+}
+
 /*
  * Workflow
 */
 
 workflow {
     kmers_gwas_paths_ch = INSTALL_KMERS_GWAS()
-    // read_paths_ch = MAKE_KMC_READ_PATHS_FILE(samples_meta_ch)
-    // KMC_COUNT_CANONIZED(read_paths_ch)
-    // KMC_COUNT_ALL(read_paths_ch)
+    read_paths_ch = MAKE_KMC_READ_PATHS_FILE(samples_meta_ch)
+    kmc_count_canonized_ch = KMC_COUNT_CANONIZED(read_paths_ch)
+    kmc_count_all_ch = KMC_COUNT_ALL(read_paths_ch)
+    kmc_count_combined_ch = COMBINE_KMC_COUNT(
+        read_paths_ch,
+        kmers_gwas_paths_ch,
+	kmc_count_canonized_ch,
+	kmc_count_all_ch
+    )
 }
 
 workflow.onComplete {
