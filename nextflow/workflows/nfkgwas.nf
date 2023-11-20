@@ -33,9 +33,27 @@ Channel
  * Processes
 */
 
+// Install kmers-gwas
+process INSTALL_KMERS_GWAS {
+    conda "/home/u16/cedar/git/pollen_quantitative_genetics/nextflow/config/conda/kmers_gwas.yaml"
+
+    tag "INSTALL_KMERS_GWAS"
+
+    output:
+    path "."
+
+    script:
+    """
+    wget https://github.com/voichek/kmersGWAS/releases/download/v0.3-beta/v0_3_beta.zip \
+        && unzip v0_3_beta.zip
+    """
+}
+
+
+
 // Make files of file paths for kmc input
-process MAKE_READ_PATHS_FILE {
-    tag "MAKE_READ_PATHS_FILE on ${accession_id}"
+process MAKE_KMC_READ_PATHS_FILE {
+    tag "MAKE_KMC_READ_PATHS_FILE on ${accession_id}"
 
     input:
     tuple val(accession_id), val(file_maps)
@@ -51,10 +69,10 @@ process MAKE_READ_PATHS_FILE {
 }
 
 // First kmc run with canonization
-process KMC_COUNT_ONE_CANONIZED {
-    conda "/home/u16/cedar/git/pollen_quantitative_genetics/nextflow/config/mamba/kmc.yaml"
+process KMC_COUNT_CANONIZED {
+    conda "/home/u16/cedar/git/pollen_quantitative_genetics/nextflow/config/conda/kmc.yaml"
 
-    tag "KMC_COUNT_ONE_CANONIZED on ${accession_id}"
+    tag "KMC_COUNT_CANONIZED on ${accession_id}"
 
     publishDir "${params.outdir}/results/kmc_count_one_canonized/${accession_id}", mode: 'symlink'
 
@@ -62,24 +80,49 @@ process KMC_COUNT_ONE_CANONIZED {
     tuple val(accession_id), val(file_maps), path(read_paths_file)
 
     output:
-    path "output_kmc_canon_${accession_id}*"
+    path "output_kmc_canon_${accession_id}.kmc_suf"
+    path "output_kmc_canon_${accession_id}.kmc_pre"
 
     script:
     println("Processing accession: ${accession_id}, file list: ${read_paths_file}") // debugging
     // Run kmc command
     """
-    kmc -t${task.cpus} -k31 -ci2 @${read_paths_file} output_kmc_canon_${accession_id} ./ 1> kmc_canon.1 2> kmc_canon.2
+    kmc -t${task.cpus} -k31 -ci2 @${read_paths_file} output_kmc_canon_${accession_id} ./ 1> ${accession_id}_kmc_canon.1 2> ${accession_id}_kmc_canon.2
     """
 }
 
+// Second kmc run without canonization
+process KMC_COUNT_ALL {
+    conda "/home/u16/cedar/git/pollen_quantitative_genetics/nextflow/config/conda/kmc.yaml"
+
+    tag "KMC_COUNT_ALL on ${accession_id}"
+
+    publishDir "${params.outdir}/results/kmc_count_all/${accession_id}", mode: 'symlink'
+
+    input:
+    tuple val(accession_id), val(file_maps), path(read_paths_file)
+
+    output:
+    path "output_kmc_all_${accession_id}.kmc_suf"
+    path "output_kmc_all_${accession_id}.kmc_pre"
+
+    script:
+    println("Processing accession: ${accession_id}, file list: ${read_paths_file}") // debugging
+    // Run kmc command
+    """
+    kmc -t${task.cpus} -k31 -ci0 -b @${read_paths_file} output_kmc_all_${accession_id} ./ 1> ${accession_id}_kmc_all.1 2> ${accession_id}_kmc_all.2
+    """
+}
 
 /*
  * Workflow
 */
 
 workflow {
-    read_paths_ch = MAKE_READ_PATHS_FILE(samples_meta_ch)
-    KMC_COUNT_ONE_CANONIZED(read_paths_ch)
+    kmers_gwas_paths_ch = INSTALL_KMERS_GWAS()
+    // read_paths_ch = MAKE_KMC_READ_PATHS_FILE(samples_meta_ch)
+    // KMC_COUNT_CANONIZED(read_paths_ch)
+    // KMC_COUNT_ALL(read_paths_ch)
 }
 
 workflow.onComplete {
