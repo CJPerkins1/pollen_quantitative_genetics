@@ -115,7 +115,7 @@ process KMC_COUNT_ALL {
 
 // Combine the two kmc runs
 process COMBINE_KMC_COUNT {
-    conda "/home/u16/cedar/git/pollen_quantitative_genetics/nextflow/config/conda/kmers_gwas.yaml"
+    conda "/home/u16/cedar/git/pollen_quantitative_genetics/nextflow/config/conda/kmers_gwas_combine_kmc_count.yaml"
 
     tag "COMBINE_KMC_COUNT on ${accession_id}"
 
