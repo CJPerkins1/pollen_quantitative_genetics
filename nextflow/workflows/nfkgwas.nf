@@ -4,7 +4,7 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
-params.samplesheet = "../samplesheets/test_samplesheet.tsv"
+params.samplesheet = "${projectDir}/../samplesheets/test_samplesheet.tsv"
 params.outdir = "." // Defaults to where the script is run
 
 log.info """\
