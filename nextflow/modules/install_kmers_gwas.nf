@@ -1,7 +1,7 @@
 // Install kmers-gwas
 
 process INSTALL_KMERS_GWAS {
-    conda "../config/conda/kmers_gwas.yaml"
+    conda "${projectDir}/../config/conda/kmers_gwas.yaml"
 
     tag "INSTALL_KMERS_GWAS"
 

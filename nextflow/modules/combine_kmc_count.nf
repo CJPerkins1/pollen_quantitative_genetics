@@ -1,7 +1,7 @@
 // Combine the two kmc runs
 
 process COMBINE_KMC_COUNT {
-    conda "../config/conda/kmers_gwas_combine_kmc_count.yaml"
+    conda "${projectDir}/../config/conda/kmers_gwas_combine_kmc_count.yaml"
 
     tag "COMBINE_KMC_COUNT on ${accession_id}"
 

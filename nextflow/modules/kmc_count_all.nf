@@ -1,7 +1,7 @@
 // Second kmc run without canonization
 
 process KMC_COUNT_ALL {
-    conda "../config/conda/kmc.yaml"
+    conda "${projectDir}/../config/conda/kmc.yaml"
 
     tag "KMC_COUNT_ALL on ${accession_id}"
 

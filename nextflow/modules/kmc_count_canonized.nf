@@ -1,7 +1,7 @@
  // First kmc run with canonization
 
  process KMC_COUNT_CANONIZED {
-     conda "../config/conda/kmc.yaml"
+     conda "${projectDir}/../config/conda/kmc.yaml"
  
      tag "KMC_COUNT_CANONIZED on ${accession_id}"
  
