@@ -7,7 +7,7 @@ process MAKE_KMC_READ_PATHS_FILE {
     tuple val(accession_id), val(file_maps)
 
     output:
-    tuple val(accession_id), val(file_maps), path("${task.workDir}/file_paths_${accession_id}.txt")
+    tuple val(accession_id), val(file_maps), path("file_paths_${accession_id}.txt")
 
     exec:
     def file_list="${task.workDir}/file_paths_${accession_id}.txt"
