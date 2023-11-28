@@ -49,13 +49,12 @@ include { COMBINE_KMC_COUNT        } from "../modules/combine_kmc_count.nf"
 workflow {
     kmers_gwas_paths_ch = INSTALL_KMERS_GWAS()
     read_paths_ch = MAKE_KMC_READ_PATHS_FILE(samples_meta_ch)
-    kmc_count_canonized_ch = KMC_COUNT_CANONIZED(read_paths_ch)
-    kmc_count_all_ch = KMC_COUNT_ALL(read_paths_ch)
+    KMC_COUNT_CANONIZED(read_paths_ch)
+    KMC_COUNT_ALL(read_paths_ch)
+    kmc_count_ch = KMC_COUNT_CANONIZED.out.join(KMC_COUNT_ALL.out, by:[0])
     kmc_count_combined_ch = COMBINE_KMC_COUNT(
-        read_paths_ch,
         kmers_gwas_paths_ch,
-	kmc_count_canonized_ch,
-	kmc_count_all_ch
+        kmc_count_ch
     )
 }
 
