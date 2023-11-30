@@ -4,6 +4,8 @@ process LIST_KMERS_FOUND_IN_MULTIPLE_SAMPLES {
     conda "${projectDir}/../config/conda/kmers_gwas_combine_kmc_count.yaml"
 
     tag "LIST_KMERS_FOUND_IN_MULTIPLE_SAMPLES "
+    
+    publishDir "${params.outdir}/results/kmers_found_in_multiple_samples", mode: 'symlink'
 
     input:
     path kmers_gwas_base_dir
