@@ -40,6 +40,7 @@ include { KMC_COUNT_CANONIZED                  } from "../modules/kmc_count_cano
 include { KMC_COUNT_ALL                        } from "../modules/kmc_count_all.nf"
 include { COMBINE_KMC_COUNT                    } from "../modules/combine_kmc_count.nf"
 include { LIST_KMERS_FOUND_IN_MULTIPLE_SAMPLES } from "../modules/list_kmers_found_in_multiple_samples.nf"
+include { BUILD_KMERS_TABLE                    } from "../modules/build_kmers_table.nf"
 
 
 /*
@@ -60,7 +61,11 @@ workflow {
         kmers_gwas_paths_ch,
         kmc_count_combined_ch.collect()
     )
-//    kmc_count_combined_ch.collect().view()
+    kmers_table_ch = BUILD_KMERS_TABLE(
+        kmers_gwas_paths_ch,
+        kmc_count_combined_ch.collect(),
+        kmers_list_ch
+    )
 }
 
 
