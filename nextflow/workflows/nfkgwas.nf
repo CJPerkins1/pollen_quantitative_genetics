@@ -27,7 +27,6 @@ Channel
         tuple(row.accession_id, [file: file(row.fq), paired_end: row.paired_end, srr_id: row.srr_id])
     }
     .groupTuple(by: [0])
-//    .view { "Grouped data: $it" }  // Debugging statement
     .set { samples_meta_ch }
 
 
@@ -35,11 +34,12 @@ Channel
  * Loading modules
 */
 
-include { INSTALL_KMERS_GWAS       } from "../modules/install_kmers_gwas.nf"
-include { MAKE_KMC_READ_PATHS_FILE } from "../modules/make_kmc_read_paths_file.nf"
-include { KMC_COUNT_CANONIZED      } from "../modules/kmc_count_canonized.nf"
-include { KMC_COUNT_ALL            } from "../modules/kmc_count_all.nf"
-include { COMBINE_KMC_COUNT        } from "../modules/combine_kmc_count.nf"
+include { INSTALL_KMERS_GWAS                   } from "../modules/install_kmers_gwas.nf"
+include { MAKE_KMC_READ_PATHS_FILE             } from "../modules/make_kmc_read_paths_file.nf"
+include { KMC_COUNT_CANONIZED                  } from "../modules/kmc_count_canonized.nf"
+include { KMC_COUNT_ALL                        } from "../modules/kmc_count_all.nf"
+include { COMBINE_KMC_COUNT                    } from "../modules/combine_kmc_count.nf"
+include { LIST_KMERS_FOUND_IN_MULTIPLE_SAMPLES } from "../modules/list_kmers_found_in_multiple_samples.nf"
 
 
 /*
@@ -56,6 +56,11 @@ workflow {
         kmers_gwas_paths_ch,
         kmc_count_ch
     )
+    kmers_list_ch = LIST_KMERS_FOUND_IN_MULTIPLE_SAMPLES(
+        kmers_gwas_paths_ch,
+        kmc_count_combined_ch.collect()
+    )
+//    kmc_count_combined_ch.collect().view()
 }
 
 
