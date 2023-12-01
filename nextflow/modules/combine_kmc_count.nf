@@ -9,10 +9,10 @@ process COMBINE_KMC_COUNT {
 
     input:
     path kmers_gwas_base_dir // kmers_gwas_paths_ch
-    tuple val(accession_id), path(canonized_pre), path(canonized_suf), path(all_pre), path(all_suf) // kmc_count_ch
+    tuple val(accession_id), path(canonized_pre), path(canonized_suf), path(canonized_stats), path(all_pre), path(all_suf), path(all_stats) // kmc_count_ch
 
     output:
-    path "${accession_id}_kmers_with_strand"
+    path("${accession_id}_kmers_with_strand")
 
     script:
     println("KMC count combine on accession: ${accession_id}, kmers_gwas_dir: ${kmers_gwas_base_dir}, kmc_count_canonized_pre: ${canonized_pre}, kmc_count_canonized_suf: ${canonized_suf}, kmc_count_all_pre: ${all_pre}, kmc_count_all_suf: ${all_suf}") // debugging

@@ -11,7 +11,7 @@ process KMC_COUNT_ALL {
     tuple val(accession_id), val(file_maps), path(read_paths_file)
 
     output:
-    tuple val(accession_id), path("${accession_id}_kmc_count_all.kmc_pre"), path("${accession_id}_kmc_count_all.kmc_suf")
+    tuple val(accession_id), path("${accession_id}_kmc_count_all.kmc_pre"), path("${accession_id}_kmc_count_all.kmc_suf"), path("${accession_id}_kmc_all.1")
 
     script:
     println("KMC count all on accession: ${accession_id}, file list: ${read_paths_file}") // debugging

@@ -11,7 +11,7 @@
      tuple val(accession_id), val(file_maps), path(read_paths_file)
  
      output:
-     tuple val(accession_id), path("${accession_id}_kmc_count_canonized.kmc_pre"), path("${accession_id}_kmc_count_canonized.kmc_suf")
+     tuple val(accession_id), path("${accession_id}_kmc_count_canonized.kmc_pre"), path("${accession_id}_kmc_count_canonized.kmc_suf"), path("${accession_id}_kmc_canon.1")
  
      script:
      println("KMC count canonized on accession: ${accession_id}, file list: ${read_paths_file}") // debugging
