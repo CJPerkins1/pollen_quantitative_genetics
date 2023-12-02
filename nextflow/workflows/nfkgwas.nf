@@ -38,6 +38,7 @@ include { INSTALL_KMERS_GWAS                   } from "../modules/install_kmers_
 include { MAKE_KMC_READ_PATHS_FILE             } from "../modules/make_kmc_read_paths_file.nf"
 include { KMC_COUNT_CANONIZED                  } from "../modules/kmc_count_canonized.nf"
 include { KMC_COUNT_ALL                        } from "../modules/kmc_count_all.nf"
+include { DO_KMERS_STATS                       } from "../modules/do_kmers_stats.nf"
 include { COMBINE_KMC_COUNT                    } from "../modules/combine_kmc_count.nf"
 include { LIST_KMERS_FOUND_IN_MULTIPLE_SAMPLES } from "../modules/list_kmers_found_in_multiple_samples.nf"
 include { BUILD_KMERS_TABLE                    } from "../modules/build_kmers_table.nf"
@@ -55,6 +56,7 @@ workflow {
     kmc_count_ch = KMC_COUNT_CANONIZED.out.join(KMC_COUNT_ALL.out, by:[0])
     //kmc_count_ch.view()
     //kmc_count_ch.collect().view()
+    DO_KMERS_STATS(kmc_count_ch.collect())
     kmc_count_combined_ch = COMBINE_KMC_COUNT(
         kmers_gwas_paths_ch,
         kmc_count_ch
