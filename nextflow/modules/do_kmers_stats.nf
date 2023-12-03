@@ -5,7 +5,7 @@ process DO_KMERS_STATS {
 
     tag "DO_KMERS_STATS"
 
-    publishDir "${params.outdir}/results/do_kmers_stats/
+    publishDir "${params.outdir}/results/do_kmers_stats/"
 
     input:
     path "*" //
@@ -15,6 +15,6 @@ process DO_KMERS_STATS {
 
     script:
     """
-    ${projectDir}/../scripts/make_kmers_stats_summary.sh
+    bash ${projectDir}/../scripts/make_kmers_stats_summary.sh
     """
 }

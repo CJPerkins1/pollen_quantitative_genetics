@@ -56,7 +56,9 @@ workflow {
     kmc_count_ch = KMC_COUNT_CANONIZED.out.join(KMC_COUNT_ALL.out, by:[0])
     //kmc_count_ch.view()
     //kmc_count_ch.collect().view()
-    DO_KMERS_STATS(kmc_count_ch.collect())
+    DO_KMERS_STATS(
+        kmc_count_ch.map{ tuple -> return [tuple[3], tuple[6]]}.collect()
+    )
     kmc_count_combined_ch = COMBINE_KMC_COUNT(
         kmers_gwas_paths_ch,
         kmc_count_ch
