@@ -1,0 +1,10 @@
+pheno_name	pheno_path
+burst_integral_increase	/xdisk/rpalaniv/cjperkins1/kmers-gwas/kgwasflow/phenos/burst_integral_increase.pheno
+bi_34C	/xdisk/rpalaniv/cjperkins1/kmers-gwas/kgwasflow/phenos/bi_34C.pheno
+pa_ratio	/xdisk/rpalaniv/cjperkins1/kmers-gwas/kgwasflow/phenos/pa_ratio.pheno
+locule_num	/xdisk/rpalaniv/cjperkins1/kmers-gwas/kgwasflow/phenos/locule_num.pheno
+tube_length_34C	/xdisk/rpalaniv/cjperkins1/kmers-gwas/kgwasflow/phenos/tube_length_34C.pheno
+tube_length_26C	/xdisk/rpalaniv/cjperkins1/kmers-gwas/kgwasflow/phenos/tube_length_26C.pheno
+bi_26C	/xdisk/rpalaniv/cjperkins1/kmers-gwas/kgwasflow/phenos/bi_26C.pheno
+burst_2h_34C	/xdisk/rpalaniv/cjperkins1/kmers-gwas/kgwasflow/phenos/burst_2h_34C.pheno
+burst_2h_26C	/xdisk/rpalaniv/cjperkins1/kmers-gwas/kgwasflow/phenos/burst_2h_26C.pheno

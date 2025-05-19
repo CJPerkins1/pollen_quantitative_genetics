@@ -1,0 +1,777 @@
+
+               
+     _     _______          __      _____  __ _               
+    | |   / ____\ \        / /\    / ____|/ _| |              
+    | | _| |  __ \ \  /\  / /  \  | (___ | |_| | _____      __
+    | |/ / | |_ | \ \/  \/ / /\ \  \___ \|  _| |/ _ \ \ /\ / /
+    |   <| |__| |  \  /\  / ____ \ ____) | | | | (_) \ V  V / 
+    |_|\_\_____|   \/  \/_/    \_\_____/|_| |_|\___/ \_/\_/  
+    
+    kGWASflow: A Snakemake Workflow for k-mers Based GWAS
+    
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183066_SRR7279725_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183066_SRR7279725_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183066_SRR7279725_1.fastq.gz to results/reads/CW0090/SRR7279725_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183066_SRR7279725_2.fastq.gz to results/reads/CW0090/SRR7279725_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183228_SRR7279563_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183228_SRR7279563_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183228_SRR7279563_1.fastq.gz to results/reads/CW0141/SRR7279563_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183228_SRR7279563_2.fastq.gz to results/reads/CW0141/SRR7279563_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183249_SRR7279542_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183249_SRR7279542_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183249_SRR7279542_1.fastq.gz to results/reads/CW0073/SRR7279542_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183249_SRR7279542_2.fastq.gz to results/reads/CW0073/SRR7279542_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183245_SRR7279546_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183245_SRR7279546_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183245_SRR7279546_1.fastq.gz to results/reads/CW0099/SRR7279546_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183245_SRR7279546_2.fastq.gz to results/reads/CW0099/SRR7279546_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183231_SRR7279560_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183231_SRR7279560_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183231_SRR7279560_1.fastq.gz to results/reads/CW0011/SRR7279560_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183231_SRR7279560_2.fastq.gz to results/reads/CW0011/SRR7279560_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183227_SRR7279564_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183227_SRR7279564_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183227_SRR7279564_1.fastq.gz to results/reads/CW0162/SRR7279564_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183227_SRR7279564_2.fastq.gz to results/reads/CW0162/SRR7279564_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183308_SRR7279483_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183308_SRR7279483_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183308_SRR7279483_1.fastq.gz to results/reads/CW1024/SRR7279483_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183308_SRR7279483_2.fastq.gz to results/reads/CW1024/SRR7279483_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183065_SRR7279726_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183065_SRR7279726_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183065_SRR7279726_1.fastq.gz to results/reads/CW0012/SRR7279726_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183065_SRR7279726_2.fastq.gz to results/reads/CW0012/SRR7279726_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183185_SRR7279606_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183185_SRR7279606_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183185_SRR7279606_1.fastq.gz to results/reads/CW0094/SRR7279606_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183185_SRR7279606_2.fastq.gz to results/reads/CW0094/SRR7279606_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183289_SRR7279502_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183289_SRR7279502_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183289_SRR7279502_1.fastq.gz to results/reads/CW0165/SRR7279502_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183289_SRR7279502_2.fastq.gz to results/reads/CW0165/SRR7279502_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183110_SRR7279681_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183110_SRR7279681_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183110_SRR7279681_1.fastq.gz to results/reads/CW0102/SRR7279681_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183110_SRR7279681_2.fastq.gz to results/reads/CW0102/SRR7279681_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183176_SRR7279615_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183176_SRR7279615_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183176_SRR7279615_1.fastq.gz to results/reads/CW0126/SRR7279615_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183176_SRR7279615_2.fastq.gz to results/reads/CW0126/SRR7279615_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183274_SRR7279517_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183274_SRR7279517_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183274_SRR7279517_1.fastq.gz to results/reads/CW0016/SRR7279517_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183274_SRR7279517_2.fastq.gz to results/reads/CW0016/SRR7279517_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183130_SRR7279661_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183130_SRR7279661_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183130_SRR7279661_1.fastq.gz to results/reads/CW0088/SRR7279661_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183130_SRR7279661_2.fastq.gz to results/reads/CW0088/SRR7279661_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183297_SRR7279494_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183297_SRR7279494_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183297_SRR7279494_1.fastq.gz to results/reads/CW0008/SRR7279494_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183297_SRR7279494_2.fastq.gz to results/reads/CW0008/SRR7279494_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183147_SRR7279644_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183147_SRR7279644_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183147_SRR7279644_1.fastq.gz to results/reads/CW0053/SRR7279644_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183147_SRR7279644_2.fastq.gz to results/reads/CW0053/SRR7279644_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183124_SRR7279667_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183124_SRR7279667_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183124_SRR7279667_1.fastq.gz to results/reads/CW1028/SRR7279667_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183124_SRR7279667_2.fastq.gz to results/reads/CW1028/SRR7279667_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183068_SRR7279723_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183068_SRR7279723_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183068_SRR7279723_1.fastq.gz to results/reads/CW0121/SRR7279723_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183068_SRR7279723_2.fastq.gz to results/reads/CW0121/SRR7279723_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183099_SRR7279692_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183099_SRR7279692_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183099_SRR7279692_1.fastq.gz to results/reads/CW1027/SRR7279692_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183099_SRR7279692_2.fastq.gz to results/reads/CW1027/SRR7279692_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183267_SRR7279524_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183267_SRR7279524_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183267_SRR7279524_1.fastq.gz to results/reads/CW0059/SRR7279524_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183267_SRR7279524_2.fastq.gz to results/reads/CW0059/SRR7279524_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183123_SRR7279668_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183123_SRR7279668_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183123_SRR7279668_1.fastq.gz to results/reads/CW0177/SRR7279668_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183123_SRR7279668_2.fastq.gz to results/reads/CW0177/SRR7279668_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183246_SRR7279545_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183246_SRR7279545_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183246_SRR7279545_1.fastq.gz to results/reads/CW0135/SRR7279545_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183246_SRR7279545_2.fastq.gz to results/reads/CW0135/SRR7279545_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183272_SRR7279519_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183272_SRR7279519_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183272_SRR7279519_1.fastq.gz to results/reads/CW0018/SRR7279519_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183272_SRR7279519_2.fastq.gz to results/reads/CW0018/SRR7279519_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183302_SRR7279489_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183302_SRR7279489_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183302_SRR7279489_1.fastq.gz to results/reads/CW0075/SRR7279489_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183302_SRR7279489_2.fastq.gz to results/reads/CW0075/SRR7279489_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183268_SRR7279523_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183268_SRR7279523_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183268_SRR7279523_1.fastq.gz to results/reads/CW0063/SRR7279523_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183268_SRR7279523_2.fastq.gz to results/reads/CW0063/SRR7279523_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183221_SRR7279570_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183221_SRR7279570_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183221_SRR7279570_1.fastq.gz to results/reads/CW0166/SRR7279570_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183221_SRR7279570_2.fastq.gz to results/reads/CW0166/SRR7279570_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183230_SRR7279561_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183230_SRR7279561_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183230_SRR7279561_1.fastq.gz to results/reads/CW0052/SRR7279561_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183230_SRR7279561_2.fastq.gz to results/reads/CW0052/SRR7279561_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183071_SRR7279720_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183071_SRR7279720_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183071_SRR7279720_1.fastq.gz to results/reads/CW1021/SRR7279720_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183071_SRR7279720_2.fastq.gz to results/reads/CW1021/SRR7279720_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183243_SRR7279548_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183243_SRR7279548_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183243_SRR7279548_1.fastq.gz to results/reads/CW0144/SRR7279548_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183243_SRR7279548_2.fastq.gz to results/reads/CW0144/SRR7279548_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183189_SRR7279602_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183189_SRR7279602_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183189_SRR7279602_1.fastq.gz to results/reads/CW0133/SRR7279602_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183189_SRR7279602_2.fastq.gz to results/reads/CW0133/SRR7279602_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183067_SRR7279724_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183067_SRR7279724_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183067_SRR7279724_1.fastq.gz to results/reads/CW0095/SRR7279724_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183067_SRR7279724_2.fastq.gz to results/reads/CW0095/SRR7279724_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183196_SRR7279595_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183196_SRR7279595_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183196_SRR7279595_1.fastq.gz to results/reads/CW0159/SRR7279595_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183196_SRR7279595_2.fastq.gz to results/reads/CW0159/SRR7279595_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183178_SRR7279613_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183178_SRR7279613_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183178_SRR7279613_1.fastq.gz to results/reads/CW0181/SRR7279613_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183178_SRR7279613_2.fastq.gz to results/reads/CW0181/SRR7279613_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183300_SRR7279491_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183300_SRR7279491_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183300_SRR7279491_1.fastq.gz to results/reads/CW0139/SRR7279491_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183300_SRR7279491_2.fastq.gz to results/reads/CW0139/SRR7279491_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183082_SRR7279709_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183082_SRR7279709_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183082_SRR7279709_1.fastq.gz to results/reads/CW0129/SRR7279709_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183082_SRR7279709_2.fastq.gz to results/reads/CW0129/SRR7279709_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183215_SRR7279576_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183215_SRR7279576_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183215_SRR7279576_1.fastq.gz to results/reads/CW0174/SRR7279576_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183215_SRR7279576_2.fastq.gz to results/reads/CW0174/SRR7279576_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183104_SRR7279687_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183104_SRR7279687_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183104_SRR7279687_1.fastq.gz to results/reads/CW1029/SRR7279687_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183104_SRR7279687_2.fastq.gz to results/reads/CW1029/SRR7279687_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183070_SRR7279721_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183070_SRR7279721_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183070_SRR7279721_1.fastq.gz to results/reads/CW1026/SRR7279721_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183070_SRR7279721_2.fastq.gz to results/reads/CW1026/SRR7279721_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183279_SRR7279512_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183279_SRR7279512_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183279_SRR7279512_1.fastq.gz to results/reads/CW0098/SRR7279512_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183279_SRR7279512_2.fastq.gz to results/reads/CW0098/SRR7279512_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183184_SRR7279607_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183184_SRR7279607_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183184_SRR7279607_1.fastq.gz to results/reads/CW0093/SRR7279607_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183184_SRR7279607_2.fastq.gz to results/reads/CW0093/SRR7279607_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183145_SRR7279646_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183145_SRR7279646_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183145_SRR7279646_1.fastq.gz to results/reads/CW0164/SRR7279646_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183145_SRR7279646_2.fastq.gz to results/reads/CW0164/SRR7279646_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183305_SRR7279486_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183305_SRR7279486_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183305_SRR7279486_1.fastq.gz to results/reads/CW0023/SRR7279486_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183305_SRR7279486_2.fastq.gz to results/reads/CW0023/SRR7279486_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183108_SRR7279683_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183108_SRR7279683_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183108_SRR7279683_1.fastq.gz to results/reads/CW1039/SRR7279683_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183108_SRR7279683_2.fastq.gz to results/reads/CW1039/SRR7279683_2.fastq.gz
+Archive:  scripts/external/kmers_gwas/v0.3-beta.zip
+   creating: scripts/external/kmers_gwas/bin/
+  inflating: scripts/external/kmers_gwas/bin/emma_kinship_kmers  
+  inflating: scripts/external/kmers_gwas/bin/histogram_KMC_kmers_counts  
+  inflating: scripts/external/kmers_gwas/bin/kmers_add_strand_information  Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183223_SRR7279568_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183223_SRR7279568_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183223_SRR7279568_1.fastq.gz to results/reads/CW0069/SRR7279568_1.fastq.gz
+
+  inflating: scripts/external/kmers_gwas/bin/associate_kmers  Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183223_SRR7279568_2.fastq.gz to results/reads/CW0069/SRR7279568_2.fastq.gz
+
+  inflating: scripts/external/kmers_gwas/bin/associate_snps  Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183219_SRR7279572_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183219_SRR7279572_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183219_SRR7279572_1.fastq.gz to results/reads/CW0021/SRR7279572_1.fastq.gz
+
+  inflating: scripts/external/kmers_gwas/bin/emma_kinship  Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183219_SRR7279572_2.fastq.gz to results/reads/CW0021/SRR7279572_2.fastq.gz
+
+  inflating: scripts/external/kmers_gwas/bin/filter_kmers  Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183278_SRR7279513_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183278_SRR7279513_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183278_SRR7279513_1.fastq.gz to results/reads/CW0074/SRR7279513_1.fastq.gz
+
+  inflating: scripts/external/kmers_gwas/bin/kmers_table_to_bed  Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183278_SRR7279513_2.fastq.gz to results/reads/CW0074/SRR7279513_2.fastq.gz
+
+  inflating: scripts/external/kmers_gwas/bin/build_kmers_table  Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183143_SRR7279648_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183143_SRR7279648_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183143_SRR7279648_1.fastq.gz to results/reads/CW0163/SRR7279648_1.fastq.gz
+
+  inflating: scripts/external/kmers_gwas/bin/list_kmers_found_in_multiple_samples  Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183143_SRR7279648_2.fastq.gz to results/reads/CW0163/SRR7279648_2.fastq.gz
+
+   creating: scripts/external/kmers_gwas/build/
+  inflating: scripts/external/kmers_gwas/build/kmc_file.d  
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183244_SRR7279547_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183244_SRR7279547_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183244_SRR7279547_1.fastq.gz to results/reads/CW0010/SRR7279547_1.fastq.gz
+  inflating: scripts/external/kmers_gwas/build/kmc_file.o  
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183244_SRR7279547_2.fastq.gz to results/reads/CW0010/SRR7279547_2.fastq.gz
+  inflating: scripts/external/kmers_gwas/build/kmer_api.d  
+  inflating: scripts/external/kmers_gwas/build/kmer_api.o  
+  inflating: scripts/external/kmers_gwas/build/mmer.d  
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183160_SRR7279631_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183160_SRR7279631_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183160_SRR7279631_1.fastq.gz to results/reads/CW0091/SRR7279631_1.fastq.gz
+  inflating: scripts/external/kmers_gwas/build/mmer.o  
+  inflating: scripts/external/kmers_gwas/build/best_associations_heap.d  Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183160_SRR7279631_2.fastq.gz to results/reads/CW0091/SRR7279631_2.fastq.gz
+
+  inflating: scripts/external/kmers_gwas/build/best_associations_heap.o  
+  inflating: scripts/external/kmers_gwas/build/kmer_general.d  
+  inflating: scripts/external/kmers_gwas/build/kmer_general.o  
+  inflating: scripts/external/kmers_gwas/build/kmers_merge_multiple_databaes.d  
+  inflating: scripts/external/kmers_gwas/build/kmers_merge_multiple_databaes.o  
+  inflating: scripts/external/kmers_gwas/build/kmers_multiple_databases.d  
+  inflating: scripts/external/kmers_gwas/build/kmers_multiple_databases.o  
+  inflating: scripts/external/kmers_gwas/build/kmers_single_database.d  
+  inflating: scripts/external/kmers_gwas/build/kmers_single_database.o  
+  inflating: scripts/external/kmers_gwas/build/snps_multiple_databases.d  
+  inflating: scripts/external/kmers_gwas/build/snps_multiple_databases.o  
+   creating: scripts/external/kmers_gwas/examples/
+   creating: scripts/external/kmers_gwas/examples/flowering_time_arabidopsis/
+  inflating: scripts/external/kmers_gwas/examples/flowering_time_arabidopsis/FT10.pheno  
+  inflating: scripts/external/kmers_gwas/examples/flowering_time_arabidopsis/run_example.sh  
+   creating: scripts/external/kmers_gwas/examples/resistence_e_coli/
+  inflating: scripts/external/kmers_gwas/examples/resistence_e_coli/resistence.pheno  
+  inflating: scripts/external/kmers_gwas/examples/resistence_e_coli/run_example.sh  
+   creating: scripts/external/kmers_gwas/external_programs/
+  inflating: scripts/external/kmers_gwas/external_programs/gemma_0_96  Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183112_SRR7279679_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183112_SRR7279679_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183112_SRR7279679_1.fastq.gz to results/reads/CW0056/SRR7279679_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183112_SRR7279679_2.fastq.gz to results/reads/CW0056/SRR7279679_2.fastq.gz
+
+  inflating: scripts/external/kmers_gwas/external_programs/kmc_v3  Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183212_SRR7279579_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183212_SRR7279579_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183212_SRR7279579_1.fastq.gz to results/reads/CW0107/SRR7279579_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183212_SRR7279579_2.fastq.gz to results/reads/CW0107/SRR7279579_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183220_SRR7279571_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183220_SRR7279571_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183220_SRR7279571_1.fastq.gz to results/reads/CW0180/SRR7279571_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183220_SRR7279571_2.fastq.gz to results/reads/CW0180/SRR7279571_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183258_SRR7279533_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183258_SRR7279533_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183258_SRR7279533_1.fastq.gz to results/reads/CW0029/SRR7279533_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183258_SRR7279533_2.fastq.gz to results/reads/CW0029/SRR7279533_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183093_SRR7279698_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183093_SRR7279698_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183093_SRR7279698_1.fastq.gz to results/reads/CW1025/SRR7279698_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183093_SRR7279698_2.fastq.gz to results/reads/CW1025/SRR7279698_2.fastq.gz
+
+   creating: scripts/external/kmers_gwas/include/
+ extracting: scripts/external/kmers_gwas/include/.gitignore  
+   creating: scripts/external/kmers_gwas/include/CTPL/
+  inflating: scripts/external/kmers_gwas/include/CTPL/.git  
+  inflating: scripts/external/kmers_gwas/include/CTPL/LICENSE  
+  inflating: scripts/external/kmers_gwas/include/CTPL/README.md  
+  inflating: scripts/external/kmers_gwas/include/CTPL/ctpl.h  
+  inflating: scripts/external/kmers_gwas/include/CTPL/ctpl_stl.h  
+  inflating: scripts/external/kmers_gwas/include/CTPL/example.cpp  
+   creating: scripts/external/kmers_gwas/include/KMC/
+  inflating: scripts/external/kmers_gwas/include/KMC/.git  
+  inflating: scripts/external/kmers_gwas/include/KMC/.gitattributes  
+  inflating: scripts/external/kmers_gwas/include/KMC/.gitignore  
+  inflating: scripts/external/kmers_gwas/include/KMC/API.pdf  
+  inflating: scripts/external/kmers_gwas/include/KMC/README.md  
+   creating: scripts/external/kmers_gwas/include/KMC/doc/
+   creating: scripts/external/kmers_gwas/include/KMC/doc/kmc_tools/
+  inflating: scripts/external/kmers_gwas/include/KMC/doc/kmc_tools/complex.tex  
+  inflating: scripts/external/kmers_gwas/include/KMC/doc/kmc_tools/filter_operation.tex  
+  inflating: scripts/external/kmers_gwas/include/KMC/doc/kmc_tools/intro.tex  
+  inflating: scripts/external/kmers_gwas/include/KMC/doc/kmc_tools/kmc_tools.tex  
+  inflating: scripts/external/kmers_gwas/include/KMC/doc/kmc_tools/simple.tex  
+  inflating: scripts/external/kmers_gwas/include/KMC/doc/kmc_tools/transform.tex  
+  inflating: scripts/external/kmers_gwas/include/KMC/doc/kmc_tools/usage.tex  
+   creating: scripts/external/kmers_gwas/include/KMC/kmc_api/
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_api/kmc_file.cpp  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_api/kmc_file.h  Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183180_SRR7279611_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183180_SRR7279611_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183180_SRR7279611_1.fastq.gz to results/reads/CW0108/SRR7279611_1.fastq.gz
+
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_api/kmer_api.cpp  
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183180_SRR7279611_2.fastq.gz to results/reads/CW0108/SRR7279611_2.fastq.gz
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_api/kmer_api.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_api/kmer_defs.h  
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183171_SRR7279620_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183171_SRR7279620_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183171_SRR7279620_1.fastq.gz to results/reads/CW0038/SRR7279620_1.fastq.gz
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_api/mmer.cpp  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_api/mmer.h  Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183171_SRR7279620_2.fastq.gz to results/reads/CW0038/SRR7279620_2.fastq.gz
+
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_api/stdafx.h  
+   creating: scripts/external/kmers_gwas/include/KMC/kmc_dump/
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_dump/kmc_dump.cpp  
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183109_SRR7279682_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183109_SRR7279682_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183109_SRR7279682_1.fastq.gz to results/reads/CW0137/SRR7279682_1.fastq.gz
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_dump/kmc_dump.vcxproj  
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183109_SRR7279682_2.fastq.gz to results/reads/CW0137/SRR7279682_2.fastq.gz
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_dump/nc_utils.cpp  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_dump/nc_utils.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_dump/stdafx.cpp  
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183218_SRR7279573_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183218_SRR7279573_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183218_SRR7279573_1.fastq.gz to results/reads/CW0167/SRR7279573_1.fastq.gz
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_dump/stdafx.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_dump/targetver.h  Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183218_SRR7279573_2.fastq.gz to results/reads/CW0167/SRR7279573_2.fastq.gz
+
+   creating: scripts/external/kmers_gwas/include/KMC/kmc_dump_sample/
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_dump_sample/kmc_dump_sample.cpp  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_dump_sample/kmc_dump_sample.vcxproj  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_dump_sample/stdafx.cpp  
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183121_SRR7279670_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183121_SRR7279670_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183121_SRR7279670_1.fastq.gz to results/reads/CW0096/SRR7279670_1.fastq.gz
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_dump_sample/stdafx.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_dump_sample/targetver.h  
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183121_SRR7279670_2.fastq.gz to results/reads/CW0096/SRR7279670_2.fastq.gz
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_tools.pdf  
+   creating: scripts/external/kmers_gwas/include/KMC/kmc_tools/
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_tools/bundle.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_tools/check_kmer.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_tools/config.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_tools/defs.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_tools/develop.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_tools/dump_writer.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_tools/expression_node.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_tools/fastq_filter.cpp  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_tools/fastq_filter.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_tools/fastq_reader.cpp  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_tools/fastq_reader.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_tools/fastq_writer.cpp  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_tools/fastq_writer.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_tools/histogram_writer.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_tools/kmc1_db_reader.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_tools/kmc1_db_writer.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_tools/kmc2_db_reader.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_tools/kmc_header.cpp  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_tools/kmc_header.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_tools/kmc_tools.cpp  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_tools/kmc_tools.vcxproj  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_tools/kmc_tools.vcxproj.filters  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_tools/kmer.h  
+   creating: scripts/external/kmers_gwas/include/KMC/kmc_tools/libs/
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_tools/libs/bzlib.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_tools/libs/bzlib_private.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_tools/libs/libbz2.1.0.5.dylib  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_tools/libs/libbz2.a  Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183152_SRR7279639_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183152_SRR7279639_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183152_SRR7279639_1.fastq.gz to results/reads/CW0122/SRR7279639_1.fastq.gz
+
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_tools/libs/libbzip2.lib  Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183152_SRR7279639_2.fastq.gz to results/reads/CW0122/SRR7279639_2.fastq.gz
+
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_tools/libs/libz.1.2.5.dylib  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_tools/libs/libz.a  Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183170_SRR7279621_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183170_SRR7279621_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183170_SRR7279621_1.fastq.gz to results/reads/CW0055/SRR7279621_1.fastq.gz
+
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_tools/libs/zconf.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_tools/libs/zlib.h  Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183170_SRR7279621_2.fastq.gz to results/reads/CW0055/SRR7279621_2.fastq.gz
+
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_tools/libs/zlibstat.lib  Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183148_SRR7279643_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183148_SRR7279643_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183148_SRR7279643_1.fastq.gz to results/reads/CW0124/SRR7279643_1.fastq.gz
+
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183148_SRR7279643_2.fastq.gz to results/reads/CW0124/SRR7279643_2.fastq.gz
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_tools/meta_oper.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_tools/nc_utils.cpp  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_tools/nc_utils.h  
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183217_SRR7279574_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183217_SRR7279574_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183217_SRR7279574_1.fastq.gz to results/reads/CW0034/SRR7279574_1.fastq.gz
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_tools/operations.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_tools/output_parser.h  Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183217_SRR7279574_2.fastq.gz to results/reads/CW0034/SRR7279574_2.fastq.gz
+
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_tools/parameters_parser.cpp  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_tools/parameters_parser.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_tools/parser.cpp  Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183213_SRR7279578_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183213_SRR7279578_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183213_SRR7279578_1.fastq.gz to results/reads/CW0125/SRR7279578_1.fastq.gz
+
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_tools/parser.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_tools/percent_progress.cpp  Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183213_SRR7279578_2.fastq.gz to results/reads/CW0125/SRR7279578_2.fastq.gz
+
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_tools/percent_progress.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_tools/queues.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_tools/stdafx.cpp  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_tools/stdafx.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_tools/targetver.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_tools/thread_watch.cpp  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_tools/thread_watch.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_tools/timer.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_tools/tokenizer.cpp  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmc_tools/tokenizer.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter.sln  
+   creating: scripts/external/kmers_gwas/include/KMC/kmer_counter/
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/bam_utils.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/binary_reader.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/bkb_merger.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/bkb_reader.cpp  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/bkb_reader.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/bkb_sorter.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/bkb_subbin.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/bkb_uncompactor.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/bkb_writer.cpp  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/bkb_writer.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/cpu_info.cpp  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/cpu_info.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/defs.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/develop.cpp  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/develop.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/fastq_reader.cpp  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/fastq_reader.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/first_dispatch.h  Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183131_SRR7279660_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183131_SRR7279660_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183131_SRR7279660_1.fastq.gz to results/reads/CW0077/SRR7279660_1.fastq.gz
+
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/intr_copy.h  Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183131_SRR7279660_2.fastq.gz to results/reads/CW0077/SRR7279660_2.fastq.gz
+
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/kb_collector.cpp  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/kb_collector.h  
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183144_SRR7279647_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183144_SRR7279647_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183144_SRR7279647_1.fastq.gz to results/reads/CW0146/SRR7279647_1.fastq.gz
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/kb_completer.cpp  Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183144_SRR7279647_2.fastq.gz to results/reads/CW0146/SRR7279647_2.fastq.gz
+
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/kb_completer.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/kb_reader.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/kb_sorter.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/kb_storer.cpp  Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183236_SRR7279555_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183236_SRR7279555_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183236_SRR7279555_1.fastq.gz to results/reads/CW0039/SRR7279555_1.fastq.gz
+
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/kb_storer.h  Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183236_SRR7279555_2.fastq.gz to results/reads/CW0039/SRR7279555_2.fastq.gz
+
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/kmc.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/kmer.cpp  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/kmer.h  
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183293_SRR7279498_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183293_SRR7279498_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183293_SRR7279498_1.fastq.gz to results/reads/CW0109/SRR7279498_1.fastq.gz
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/kmer_counter.cpp  
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183293_SRR7279498_2.fastq.gz to results/reads/CW0109/SRR7279498_2.fastq.gz
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/kmer_counter.vcxproj  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/kmer_counter.vcxproj.filters  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/kxmer_set.h  Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183200_SRR7279591_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183200_SRR7279591_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183200_SRR7279591_1.fastq.gz to results/reads/CW0027/SRR7279591_1.fastq.gz
+
+   creating: scripts/external/kmers_gwas/include/KMC/kmer_counter/libs/
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183200_SRR7279591_2.fastq.gz to results/reads/CW0027/SRR7279591_2.fastq.gz
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/libs/bzlib.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/libs/bzlib_private.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/libs/libbz2.1.0.5.dylib  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/libs/libbz2.a  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/libs/libbzip2.lib  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/libs/libz.1.2.5.dylib  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/libs/libz.a  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/libs/zconf.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/libs/zlib.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/libs/zlibstat.lib  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/mem_disk_file.cpp  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/mem_disk_file.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/meta_oper.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/mmer.cpp  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/mmer.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/params.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/queues.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/percent_progress.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/radix.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/raduls.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/raduls_avx.cpp  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/raduls_avx2.cpp  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/raduls_impl.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/raduls_sse2.cpp  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/raduls_sse41.cpp  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/rev_byte.cpp  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/rev_byte.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/s_mapper.h  Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183257_SRR7279534_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183257_SRR7279534_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183257_SRR7279534_1.fastq.gz to results/reads/CW0169/SRR7279534_1.fastq.gz
+
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/small_k_buf.h  Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183257_SRR7279534_2.fastq.gz to results/reads/CW0169/SRR7279534_2.fastq.gz
+
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/small_sort.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/splitter.cpp  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/splitter.h  
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183224_SRR7279567_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183224_SRR7279567_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183224_SRR7279567_1.fastq.gz to results/reads/CW0020/SRR7279567_1.fastq.gz
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/stdafx.cpp  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/stdafx.h  Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183224_SRR7279567_2.fastq.gz to results/reads/CW0020/SRR7279567_2.fastq.gz
+
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/targetver.h  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/timer.cpp  
+  inflating: scripts/external/kmers_gwas/include/KMC/kmer_counter/timer.h  Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183153_SRR7279638_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183153_SRR7279638_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183153_SRR7279638_1.fastq.gz to results/reads/CW1031/SRR7279638_1.fastq.gz
+
+  inflating: scripts/external/kmers_gwas/include/KMC/makefile  
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183153_SRR7279638_2.fastq.gz to results/reads/CW1031/SRR7279638_2.fastq.gz
+  inflating: scripts/external/kmers_gwas/include/KMC/makefile_mac  
+   creating: scripts/external/kmers_gwas/include/cxxopts/
+  inflating: scripts/external/kmers_gwas/include/cxxopts/.git  
+  inflating: scripts/external/kmers_gwas/include/cxxopts/.gitignore  Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183077_SRR7279714_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183077_SRR7279714_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183077_SRR7279714_1.fastq.gz to results/reads/CW0140/SRR7279714_1.fastq.gz
+
+  inflating: scripts/external/kmers_gwas/include/cxxopts/.travis.yml  
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183077_SRR7279714_2.fastq.gz to results/reads/CW0140/SRR7279714_2.fastq.gz
+  inflating: scripts/external/kmers_gwas/include/cxxopts/CHANGELOG.md  
+  inflating: scripts/external/kmers_gwas/include/cxxopts/CMakeLists.txt  
+  inflating: scripts/external/kmers_gwas/include/cxxopts/INSTALL  
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183197_SRR7279594_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183197_SRR7279594_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183197_SRR7279594_1.fastq.gz to results/reads/CW0060/SRR7279594_1.fastq.gz
+  inflating: scripts/external/kmers_gwas/include/cxxopts/LICENSE  
+  inflating: scripts/external/kmers_gwas/include/cxxopts/README.md  Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183197_SRR7279594_2.fastq.gz to results/reads/CW0060/SRR7279594_2.fastq.gz
+
+  inflating: scripts/external/kmers_gwas/include/cxxopts/cxxopts-config.cmake.in  
+   creating: scripts/external/kmers_gwas/include/cxxopts/include/
+  inflating: scripts/external/kmers_gwas/include/cxxopts/include/cxxopts.hpp  
+   creating: scripts/external/kmers_gwas/include/cxxopts/src/
+ extracting: scripts/external/kmers_gwas/include/cxxopts/src/.gitignore  
+  inflating: scripts/external/kmers_gwas/include/cxxopts/src/CMakeLists.txt  
+  inflating: scripts/external/kmers_gwas/include/cxxopts/src/example.cpp  
+   creating: scripts/external/kmers_gwas/include/cxxopts/test/
+ extracting: scripts/external/kmers_gwas/include/cxxopts/test/.gitignore  
+  inflating: scripts/external/kmers_gwas/include/cxxopts/test/CMakeLists.txt  
+   creating: scripts/external/kmers_gwas/include/cxxopts/test/add-subdirectory-test/
+  inflating: scripts/external/kmers_gwas/include/cxxopts/test/add-subdirectory-test/CMakeLists.txt  
+  inflating: scripts/external/kmers_gwas/include/cxxopts/test/catch.hpp  
+   creating: scripts/external/kmers_gwas/include/cxxopts/test/find-package-test/
+  inflating: scripts/external/kmers_gwas/include/cxxopts/test/find-package-test/CMakeLists.txt  
+ extracting: scripts/external/kmers_gwas/include/cxxopts/test/link_a.cpp  
+ extracting: scripts/external/kmers_gwas/include/cxxopts/test/link_b.cpp  
+ extracting: scripts/external/kmers_gwas/include/cxxopts/test/main.cpp  
+  inflating: scripts/external/kmers_gwas/include/cxxopts/test/options.cpp  
+   creating: scripts/external/kmers_gwas/include/sparsehash/
+  inflating: scripts/external/kmers_gwas/include/sparsehash/dense_hash_map  
+  inflating: scripts/external/kmers_gwas/include/sparsehash/dense_hash_set  
+   creating: scripts/external/kmers_gwas/include/sparsehash/internal/
+  inflating: scripts/external/kmers_gwas/include/sparsehash/internal/densehashtable.h  
+  inflating: scripts/external/kmers_gwas/include/sparsehash/internal/hashtable-common.h  
+  inflating: scripts/external/kmers_gwas/include/sparsehash/internal/libc_allocator_with_realloc.h  
+  inflating: scripts/external/kmers_gwas/include/sparsehash/internal/sparseconfig.h  
+  inflating: scripts/external/kmers_gwas/include/sparsehash/internal/sparsehashtable.h  
+  inflating: scripts/external/kmers_gwas/include/sparsehash/sparse_hash_map  
+  inflating: scripts/external/kmers_gwas/include/sparsehash/sparse_hash_set  
+  inflating: scripts/external/kmers_gwas/include/sparsehash/sparsetable  Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183242_SRR7279549_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183242_SRR7279549_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183242_SRR7279549_1.fastq.gz to results/reads/CW0040/SRR7279549_1.fastq.gz
+
+  inflating: scripts/external/kmers_gwas/include/sparsehash/template_util.h  
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183242_SRR7279549_2.fastq.gz to results/reads/CW0040/SRR7279549_2.fastq.gz
+  inflating: scripts/external/kmers_gwas/include/sparsehash/type_traits.h  
+  inflating: scripts/external/kmers_gwas/kmers_gwas.py  
+  inflating: scripts/external/kmers_gwas/LICENSE  Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183134_SRR7279657_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183134_SRR7279657_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183134_SRR7279657_1.fastq.gz to results/reads/CW0131/SRR7279657_1.fastq.gz
+
+  inflating: scripts/external/kmers_gwas/Makefile  Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183134_SRR7279657_2.fastq.gz to results/reads/CW0131/SRR7279657_2.fastq.gz
+
+  inflating: scripts/external/kmers_gwas/manual.pdf  
+  inflating: scripts/external/kmers_gwas/README.md  
+   creating: scripts/external/kmers_gwas/src/
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183164_SRR7279627_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183164_SRR7279627_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183164_SRR7279627_1.fastq.gz to results/reads/CW0087/SRR7279627_1.fastq.gz
+   creating: scripts/external/kmers_gwas/src/R/
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183164_SRR7279627_2.fastq.gz to results/reads/CW0087/SRR7279627_2.fastq.gz
+  inflating: scripts/external/kmers_gwas/src/R/emma.R  
+  inflating: scripts/external/kmers_gwas/src/R/transform_and_permute_phenotypes.R  
+  inflating: scripts/external/kmers_gwas/src/associate_kmers.cpp  
+  inflating: scripts/external/kmers_gwas/src/associate_snps.cpp  Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183183_SRR7279608_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183183_SRR7279608_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183183_SRR7279608_1.fastq.gz to results/reads/CW0176/SRR7279608_1.fastq.gz
+
+   creating: scripts/external/kmers_gwas/src/awk/
+  inflating: scripts/external/kmers_gwas/src/awk/average_phenotypes.awk  Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183183_SRR7279608_2.fastq.gz to results/reads/CW0176/SRR7279608_2.fastq.gz
+
+  inflating: scripts/external/kmers_gwas/src/best_associations_heap.cpp  
+  inflating: scripts/external/kmers_gwas/src/best_associations_heap.h  
+  inflating: scripts/external/kmers_gwas/src/build_kmers_table.cpp  Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183069_SRR7279722_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183069_SRR7279722_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183069_SRR7279722_1.fastq.gz to results/reads/CW0079/SRR7279722_1.fastq.gz
+
+  inflating: scripts/external/kmers_gwas/src/emma_kinship.cpp  
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183069_SRR7279722_2.fastq.gz to results/reads/CW0079/SRR7279722_2.fastq.gz
+  inflating: scripts/external/kmers_gwas/src/emma_kinship_kmers.cpp  
+  inflating: scripts/external/kmers_gwas/src/filter_kmers.cpp  
+  inflating: scripts/external/kmers_gwas/src/histogram_KMC_kmers_counts.cpp  
+  inflating: scripts/external/kmers_gwas/src/kmer_general.cpp  
+  inflating: scripts/external/kmers_gwas/src/kmer_general.h  
+  inflating: scripts/external/kmers_gwas/src/kmers_add_strand_information.cpp  
+  inflating: scripts/external/kmers_gwas/src/kmers_merge_multiple_databaes.cpp  
+  inflating: scripts/external/kmers_gwas/src/kmers_merge_multiple_databaes.h  
+  inflating: scripts/external/kmers_gwas/src/kmers_multiple_databases.cpp  
+  inflating: scripts/external/kmers_gwas/src/kmers_multiple_databases.h  
+  inflating: scripts/external/kmers_gwas/src/kmers_single_database.cpp  
+  inflating: scripts/external/kmers_gwas/src/kmers_single_database.h  
+  inflating: scripts/external/kmers_gwas/src/kmers_table_to_bed.cpp  
+  inflating: scripts/external/kmers_gwas/src/list_kmers_found_in_multiple_samples.cpp  
+   creating: scripts/external/kmers_gwas/src/py/
+  inflating: scripts/external/kmers_gwas/src/py/align_kinship_phenotype.py  
+  inflating: scripts/external/kmers_gwas/src/py/functions.py  
+  inflating: scripts/external/kmers_gwas/src/py/pipeline_parser.py  
+  inflating: scripts/external/kmers_gwas/src/snps_multiple_databases.cpp  
+  inflating: scripts/external/kmers_gwas/src/snps_multiple_databases.h  
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183157_SRR7279634_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183157_SRR7279634_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183157_SRR7279634_1.fastq.gz to results/reads/CW0160/SRR7279634_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183157_SRR7279634_2.fastq.gz to results/reads/CW0160/SRR7279634_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183114_SRR7279677_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183114_SRR7279677_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183114_SRR7279677_1.fastq.gz to results/reads/CW1000/SRR7279677_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183114_SRR7279677_2.fastq.gz to results/reads/CW1000/SRR7279677_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183100_SRR7279691_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183100_SRR7279691_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183100_SRR7279691_1.fastq.gz to results/reads/CW0024/SRR7279691_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183100_SRR7279691_2.fastq.gz to results/reads/CW0024/SRR7279691_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183101_SRR7279690_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183101_SRR7279690_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183101_SRR7279690_1.fastq.gz to results/reads/CW0065/SRR7279690_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183101_SRR7279690_2.fastq.gz to results/reads/CW0065/SRR7279690_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183142_SRR7279649_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183142_SRR7279649_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183142_SRR7279649_1.fastq.gz to results/reads/CW0145/SRR7279649_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183142_SRR7279649_2.fastq.gz to results/reads/CW0145/SRR7279649_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183149_SRR7279642_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183149_SRR7279642_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183149_SRR7279642_1.fastq.gz to results/reads/CW0076/SRR7279642_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183149_SRR7279642_2.fastq.gz to results/reads/CW0076/SRR7279642_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183139_SRR7279652_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183139_SRR7279652_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183139_SRR7279652_1.fastq.gz to results/reads/CW0111/SRR7279652_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183139_SRR7279652_2.fastq.gz to results/reads/CW0111/SRR7279652_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183241_SRR7279550_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183241_SRR7279550_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183241_SRR7279550_1.fastq.gz to results/reads/CW0014/SRR7279550_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183241_SRR7279550_2.fastq.gz to results/reads/CW0014/SRR7279550_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183169_SRR7279622_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183169_SRR7279622_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183169_SRR7279622_1.fastq.gz to results/reads/CW0054/SRR7279622_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183169_SRR7279622_2.fastq.gz to results/reads/CW0054/SRR7279622_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183095_SRR7279696_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183095_SRR7279696_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183095_SRR7279696_1.fastq.gz to results/reads/CW1002/SRR7279696_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183095_SRR7279696_2.fastq.gz to results/reads/CW1002/SRR7279696_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183310_SRR7279481_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183310_SRR7279481_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183310_SRR7279481_1.fastq.gz to results/reads/CW0123/SRR7279481_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183310_SRR7279481_2.fastq.gz to results/reads/CW0123/SRR7279481_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183168_SRR7279623_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183168_SRR7279623_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183168_SRR7279623_1.fastq.gz to results/reads/CW1032/SRR7279623_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183168_SRR7279623_2.fastq.gz to results/reads/CW1032/SRR7279623_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183266_SRR7279525_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183266_SRR7279525_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183266_SRR7279525_1.fastq.gz to results/reads/CW0179/SRR7279525_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183266_SRR7279525_2.fastq.gz to results/reads/CW0179/SRR7279525_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183188_SRR7279603_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183188_SRR7279603_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183188_SRR7279603_1.fastq.gz to results/reads/CW0097/SRR7279603_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183188_SRR7279603_2.fastq.gz to results/reads/CW0097/SRR7279603_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183076_SRR7279715_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183076_SRR7279715_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183076_SRR7279715_1.fastq.gz to results/reads/CW0132/SRR7279715_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183076_SRR7279715_2.fastq.gz to results/reads/CW0132/SRR7279715_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183265_SRR7279526_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183265_SRR7279526_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183265_SRR7279526_1.fastq.gz to results/reads/CW0103/SRR7279526_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183265_SRR7279526_2.fastq.gz to results/reads/CW0103/SRR7279526_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183085_SRR7279706_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183085_SRR7279706_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183085_SRR7279706_1.fastq.gz to results/reads/CW0064/SRR7279706_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183085_SRR7279706_2.fastq.gz to results/reads/CW0064/SRR7279706_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183299_SRR7279492_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183299_SRR7279492_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183299_SRR7279492_1.fastq.gz to results/reads/CW0151/SRR7279492_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183299_SRR7279492_2.fastq.gz to results/reads/CW0151/SRR7279492_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183173_SRR7279618_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183173_SRR7279618_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183173_SRR7279618_1.fastq.gz to results/reads/CW0043/SRR7279618_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183173_SRR7279618_2.fastq.gz to results/reads/CW0043/SRR7279618_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183222_SRR7279569_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183222_SRR7279569_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183222_SRR7279569_1.fastq.gz to results/reads/CW0080/SRR7279569_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183222_SRR7279569_2.fastq.gz to results/reads/CW0080/SRR7279569_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183235_SRR7279556_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183235_SRR7279556_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183235_SRR7279556_1.fastq.gz to results/reads/CW0149/SRR7279556_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183235_SRR7279556_2.fastq.gz to results/reads/CW0149/SRR7279556_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183113_SRR7279678_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183113_SRR7279678_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183113_SRR7279678_1.fastq.gz to results/reads/CW0049/SRR7279678_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183113_SRR7279678_2.fastq.gz to results/reads/CW0049/SRR7279678_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183198_SRR7279593_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183198_SRR7279593_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183198_SRR7279593_1.fastq.gz to results/reads/CW0106/SRR7279593_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183198_SRR7279593_2.fastq.gz to results/reads/CW0106/SRR7279593_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183253_SRR7279538_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183253_SRR7279538_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183253_SRR7279538_1.fastq.gz to results/reads/CW0081/SRR7279538_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183253_SRR7279538_2.fastq.gz to results/reads/CW0081/SRR7279538_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183146_SRR7279645_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183146_SRR7279645_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183146_SRR7279645_1.fastq.gz to results/reads/CW0086/SRR7279645_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183146_SRR7279645_2.fastq.gz to results/reads/CW0086/SRR7279645_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183158_SRR7279633_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183158_SRR7279633_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183158_SRR7279633_1.fastq.gz to results/reads/CW0058/SRR7279633_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183158_SRR7279633_2.fastq.gz to results/reads/CW0058/SRR7279633_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183186_SRR7279605_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183186_SRR7279605_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183186_SRR7279605_1.fastq.gz to results/reads/CW0153/SRR7279605_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183186_SRR7279605_2.fastq.gz to results/reads/CW0153/SRR7279605_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183206_SRR7279585_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183206_SRR7279585_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183206_SRR7279585_1.fastq.gz to results/reads/CW0082/SRR7279585_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183206_SRR7279585_2.fastq.gz to results/reads/CW0082/SRR7279585_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183151_SRR7279640_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183151_SRR7279640_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183151_SRR7279640_1.fastq.gz to results/reads/CW0157/SRR7279640_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183151_SRR7279640_2.fastq.gz to results/reads/CW0157/SRR7279640_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183295_SRR7279496_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183295_SRR7279496_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183295_SRR7279496_1.fastq.gz to results/reads/CW0051/SRR7279496_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183295_SRR7279496_2.fastq.gz to results/reads/CW0051/SRR7279496_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183140_SRR7279651_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183140_SRR7279651_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183140_SRR7279651_1.fastq.gz to results/reads/CW0120/SRR7279651_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183140_SRR7279651_2.fastq.gz to results/reads/CW0120/SRR7279651_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183285_SRR7279506_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183285_SRR7279506_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183285_SRR7279506_1.fastq.gz to results/reads/CW1022/SRR7279506_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183285_SRR7279506_2.fastq.gz to results/reads/CW1022/SRR7279506_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183252_SRR7279539_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183252_SRR7279539_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183252_SRR7279539_1.fastq.gz to results/reads/CW0113/SRR7279539_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183252_SRR7279539_2.fastq.gz to results/reads/CW0113/SRR7279539_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183091_SRR7279700_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183091_SRR7279700_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183091_SRR7279700_1.fastq.gz to results/reads/CW1009/SRR7279700_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183091_SRR7279700_2.fastq.gz to results/reads/CW1009/SRR7279700_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183216_SRR7279575_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183216_SRR7279575_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183216_SRR7279575_1.fastq.gz to results/reads/CW0148/SRR7279575_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183216_SRR7279575_2.fastq.gz to results/reads/CW0148/SRR7279575_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183204_SRR7279587_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183204_SRR7279587_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183204_SRR7279587_1.fastq.gz to results/reads/CW0161/SRR7279587_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183204_SRR7279587_2.fastq.gz to results/reads/CW0161/SRR7279587_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183225_SRR7279566_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183225_SRR7279566_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183225_SRR7279566_1.fastq.gz to results/reads/CW0089/SRR7279566_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183225_SRR7279566_2.fastq.gz to results/reads/CW0089/SRR7279566_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183080_SRR7279711_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183080_SRR7279711_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183080_SRR7279711_1.fastq.gz to results/reads/CW0130/SRR7279711_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183080_SRR7279711_2.fastq.gz to results/reads/CW0130/SRR7279711_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183161_SRR7279630_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183161_SRR7279630_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183161_SRR7279630_1.fastq.gz to results/reads/CW0022/SRR7279630_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183161_SRR7279630_2.fastq.gz to results/reads/CW0022/SRR7279630_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183083_SRR7279708_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183083_SRR7279708_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183083_SRR7279708_1.fastq.gz to results/reads/CW0045/SRR7279708_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183083_SRR7279708_2.fastq.gz to results/reads/CW0045/SRR7279708_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183102_SRR7279689_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183102_SRR7279689_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183102_SRR7279689_1.fastq.gz to results/reads/CW0115/SRR7279689_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183102_SRR7279689_2.fastq.gz to results/reads/CW0115/SRR7279689_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183282_SRR7279509_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183282_SRR7279509_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183282_SRR7279509_1.fastq.gz to results/reads/CW0083/SRR7279509_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183282_SRR7279509_2.fastq.gz to results/reads/CW0083/SRR7279509_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183155_SRR7279636_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183155_SRR7279636_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183155_SRR7279636_1.fastq.gz to results/reads/CW0154/SRR7279636_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183155_SRR7279636_2.fastq.gz to results/reads/CW0154/SRR7279636_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183239_SRR7279552_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183239_SRR7279552_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183239_SRR7279552_1.fastq.gz to results/reads/CW0061/SRR7279552_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183239_SRR7279552_2.fastq.gz to results/reads/CW0061/SRR7279552_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183211_SRR7279580_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183211_SRR7279580_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183211_SRR7279580_1.fastq.gz to results/reads/CW1011/SRR7279580_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183211_SRR7279580_2.fastq.gz to results/reads/CW1011/SRR7279580_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183120_SRR7279671_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183120_SRR7279671_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183120_SRR7279671_1.fastq.gz to results/reads/CW0101/SRR7279671_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183120_SRR7279671_2.fastq.gz to results/reads/CW0101/SRR7279671_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183126_SRR7279665_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183126_SRR7279665_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183126_SRR7279665_1.fastq.gz to results/reads/CW1023/SRR7279665_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183126_SRR7279665_2.fastq.gz to results/reads/CW1023/SRR7279665_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183119_SRR7279672_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183119_SRR7279672_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183119_SRR7279672_1.fastq.gz to results/reads/CW1007/SRR7279672_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183119_SRR7279672_2.fastq.gz to results/reads/CW1007/SRR7279672_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183286_SRR7279505_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183286_SRR7279505_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183286_SRR7279505_1.fastq.gz to results/reads/CW1030/SRR7279505_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183286_SRR7279505_2.fastq.gz to results/reads/CW1030/SRR7279505_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183240_SRR7279551_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183240_SRR7279551_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183240_SRR7279551_1.fastq.gz to results/reads/CW0062/SRR7279551_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183240_SRR7279551_2.fastq.gz to results/reads/CW0062/SRR7279551_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183201_SRR7279590_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183201_SRR7279590_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183201_SRR7279590_1.fastq.gz to results/reads/CW0047/SRR7279590_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183201_SRR7279590_2.fastq.gz to results/reads/CW0047/SRR7279590_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183296_SRR7279495_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183296_SRR7279495_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183296_SRR7279495_1.fastq.gz to results/reads/CW0168/SRR7279495_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183296_SRR7279495_2.fastq.gz to results/reads/CW0168/SRR7279495_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183154_SRR7279637_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183154_SRR7279637_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183154_SRR7279637_1.fastq.gz to results/reads/CW0112/SRR7279637_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183154_SRR7279637_2.fastq.gz to results/reads/CW0112/SRR7279637_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183074_SRR7279717_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183074_SRR7279717_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183074_SRR7279717_1.fastq.gz to results/reads/CW0156/SRR7279717_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183074_SRR7279717_2.fastq.gz to results/reads/CW0156/SRR7279717_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183306_SRR7279485_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183306_SRR7279485_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183306_SRR7279485_1.fastq.gz to results/reads/CW0104/SRR7279485_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183306_SRR7279485_2.fastq.gz to results/reads/CW0104/SRR7279485_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183260_SRR7279531_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183260_SRR7279531_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183260_SRR7279531_1.fastq.gz to results/reads/CW0028/SRR7279531_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183260_SRR7279531_2.fastq.gz to results/reads/CW0028/SRR7279531_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183256_SRR7279535_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183256_SRR7279535_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183256_SRR7279535_1.fastq.gz to results/reads/CW1035/SRR7279535_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183256_SRR7279535_2.fastq.gz to results/reads/CW1035/SRR7279535_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183111_SRR7279680_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183111_SRR7279680_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183111_SRR7279680_1.fastq.gz to results/reads/CW0143/SRR7279680_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183111_SRR7279680_2.fastq.gz to results/reads/CW0143/SRR7279680_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183255_SRR7279536_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183255_SRR7279536_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183255_SRR7279536_1.fastq.gz to results/reads/CW0178/SRR7279536_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183255_SRR7279536_2.fastq.gz to results/reads/CW0178/SRR7279536_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183105_SRR7279686_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183105_SRR7279686_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183105_SRR7279686_1.fastq.gz to results/reads/CW1012/SRR7279686_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183105_SRR7279686_2.fastq.gz to results/reads/CW1012/SRR7279686_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183234_SRR7279557_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183234_SRR7279557_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183234_SRR7279557_1.fastq.gz to results/reads/CW0118/SRR7279557_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183234_SRR7279557_2.fastq.gz to results/reads/CW0118/SRR7279557_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183125_SRR7279666_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183125_SRR7279666_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183125_SRR7279666_1.fastq.gz to results/reads/CW1003/SRR7279666_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183125_SRR7279666_2.fastq.gz to results/reads/CW1003/SRR7279666_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183283_SRR7279508_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183283_SRR7279508_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183283_SRR7279508_1.fastq.gz to results/reads/CW0117/SRR7279508_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183283_SRR7279508_2.fastq.gz to results/reads/CW0117/SRR7279508_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183182_SRR7279609_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183182_SRR7279609_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183182_SRR7279609_1.fastq.gz to results/reads/CW0155/SRR7279609_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183182_SRR7279609_2.fastq.gz to results/reads/CW0155/SRR7279609_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183309_SRR7279482_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183309_SRR7279482_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183309_SRR7279482_1.fastq.gz to results/reads/CW0084/SRR7279482_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183309_SRR7279482_2.fastq.gz to results/reads/CW0084/SRR7279482_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183208_SRR7279583_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183208_SRR7279583_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183208_SRR7279583_1.fastq.gz to results/reads/CW1037/SRR7279583_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183208_SRR7279583_2.fastq.gz to results/reads/CW1037/SRR7279583_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183281_SRR7279510_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183281_SRR7279510_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183281_SRR7279510_1.fastq.gz to results/reads/CW0048/SRR7279510_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183281_SRR7279510_2.fastq.gz to results/reads/CW0048/SRR7279510_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183107_SRR7279684_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183107_SRR7279684_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183107_SRR7279684_1.fastq.gz to results/reads/CW0085/SRR7279684_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183107_SRR7279684_2.fastq.gz to results/reads/CW0085/SRR7279684_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183179_SRR7279612_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183179_SRR7279612_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183179_SRR7279612_1.fastq.gz to results/reads/CW0119/SRR7279612_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183179_SRR7279612_2.fastq.gz to results/reads/CW0119/SRR7279612_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183097_SRR7279694_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183097_SRR7279694_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183097_SRR7279694_1.fastq.gz to results/reads/CW1013/SRR7279694_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183097_SRR7279694_2.fastq.gz to results/reads/CW1013/SRR7279694_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183187_SRR7279604_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183187_SRR7279604_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183187_SRR7279604_1.fastq.gz to results/reads/CW0042/SRR7279604_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183187_SRR7279604_2.fastq.gz to results/reads/CW0042/SRR7279604_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183098_SRR7279693_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183098_SRR7279693_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183098_SRR7279693_1.fastq.gz to results/reads/CW1005/SRR7279693_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183098_SRR7279693_2.fastq.gz to results/reads/CW1005/SRR7279693_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183181_SRR7279610_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183181_SRR7279610_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183181_SRR7279610_1.fastq.gz to results/reads/CW0071/SRR7279610_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183181_SRR7279610_2.fastq.gz to results/reads/CW0071/SRR7279610_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183280_SRR7279511_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183280_SRR7279511_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183280_SRR7279511_1.fastq.gz to results/reads/CW0019/SRR7279511_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183280_SRR7279511_2.fastq.gz to results/reads/CW0019/SRR7279511_2.fastq.gz
+Working on fastq files: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183081_SRR7279710_1.fastq.gz /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183081_SRR7279710_2.fastq.gz
+Symlink -fastq1: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183081_SRR7279710_1.fastq.gz to results/reads/CW1018/SRR7279710_1.fastq.gz
+Symlink -fastq2: /xdisk/rpalaniv/cjperkins1/kmers-gwas/genomes/varitome/fastq/SRX4183081_SRR7279710_2.fastq.gz to results/reads/CW1018/SRR7279710_2.fastq.gz
+Submodule path 'include/klib': checked out '928581a78413bed4efa956731b35b18a638f20f3'
+g++ -g -O3 fetch_reads.cpp -o fetch_reads -lz 
+Checking if all required files are provided...
+	All required files are present!
+Error! The Snakemake workflow aborted.
