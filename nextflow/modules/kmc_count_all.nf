@@ -5,7 +5,7 @@ process KMC_COUNT_ALL {
 
     tag "KMC_COUNT_ALL on ${accession_id}"
 
-    publishDir "${params.outdir}/results/kmc_count_all/${accession_id}", mode: 'symlink'
+    publishDir "${params.outdir}/results/kmc_count_all/${accession_id}", mode: 'link'
 
     input:
     tuple val(accession_id), val(file_maps), path(read_paths_file)

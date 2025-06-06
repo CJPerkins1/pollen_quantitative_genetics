@@ -5,7 +5,7 @@ process LIST_KMERS_FOUND_IN_MULTIPLE_SAMPLES {
 
     tag "LIST_KMERS_FOUND_IN_MULTIPLE_SAMPLES "
     
-    publishDir "${params.outdir}/results/kmers_found_in_multiple_samples", mode: 'symlink'
+    publishDir "${params.outdir}/results/kmers_found_in_multiple_samples", mode: 'link'
 
     input:
     path kmers_gwas_base_dir

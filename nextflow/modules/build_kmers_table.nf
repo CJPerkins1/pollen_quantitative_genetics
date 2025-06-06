@@ -5,7 +5,7 @@ process BUILD_KMERS_TABLE{
 
     tag "BUILD_KMERS_TABLE"
 
-    publishDir "${params.outdir}/results/kmers_table/", mode: 'symlink'
+    publishDir "${params.outdir}/results/kmers_table/", mode: 'link'
 
     input:
     path kmers_gwas_base_dir // kmers_gwas_paths_ch

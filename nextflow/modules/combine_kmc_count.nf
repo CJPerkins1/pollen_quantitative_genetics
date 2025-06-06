@@ -5,7 +5,7 @@ process COMBINE_KMC_COUNT {
 
     tag "COMBINE_KMC_COUNT on ${accession_id}"
 
-    publishDir "${params.outdir}/results/combine_kmc_count/${accession_id}", mode: 'symlink'
+    publishDir "${params.outdir}/results/combine_kmc_count/${accession_id}", mode: 'link'
 
     input:
     path kmers_gwas_base_dir // kmers_gwas_paths_ch

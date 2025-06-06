@@ -5,7 +5,7 @@
  
      tag "KMC_COUNT_CANONIZED on ${accession_id}"
  
-     publishDir "${params.outdir}/results/kmc_count_one_canonized/${accession_id}", mode: 'symlink'
+     publishDir "${params.outdir}/results/kmc_count_one_canonized/${accession_id}", mode: 'link'
  
      input:
      tuple val(accession_id), val(file_maps), path(read_paths_file)

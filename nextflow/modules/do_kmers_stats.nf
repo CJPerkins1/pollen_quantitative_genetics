@@ -18,3 +18,4 @@ process DO_KMERS_STATS {
     bash ${projectDir}/../scripts/make_kmers_stats_summary.sh
     """
 }
+
