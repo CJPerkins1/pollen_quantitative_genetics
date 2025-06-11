@@ -5,15 +5,21 @@
 */
 
 params.samplesheet = "${projectDir}/../samplesheets/test_samplesheet.tsv"
+params.phenotypes_samplesheet = "${projectDir}/../samplesheets/nf_test_pheno.tsv"
 params.cleanup_fastq = false
 params.outdir = "." // Defaults to where the script is run
+params.only_unique_kmers = false
+params.run_convert_kmers_table_to_plink = false
 
 log.info """\
     NF - K - M E R S - G W A S   P I P E L I N E
     ============================================
     samplesheet  : ${params.samplesheet}
+    phenotypes   : ${params.phenotypes_samplesheet}
     outdir       : ${params.outdir}
     cleanup      : ${params.cleanup_fastq}
+    unique_kmers : ${params.only_unique_kmers}
+    kmers_to_plink : ${params.run_convert_kmers_table_to_plink}
     """
     .stripIndent()
 
@@ -32,6 +38,11 @@ Channel
     .view()
     .set { samples_meta_ch }
 
+Channel
+    .fromPath(params.phenotypes_samplesheet) // Path to your phenotype samplesheet
+    .splitCsv(sep: '\t', header: true) // Assuming tab-separated with a header
+    .map { row -> tuple(row.pheno_name, file(row.pheno_path)) } // Map pheno_name to the val and pheno_path to the file
+    .set { phenotype_channel }
 
 /*
  * Loading modules
@@ -46,7 +57,7 @@ include { DO_KMERS_STATS                       } from "../modules/do_kmers_stats
 include { COMBINE_KMC_COUNT                    } from "../modules/combine_kmc_count.nf"
 include { LIST_KMERS_FOUND_IN_MULTIPLE_SAMPLES } from "../modules/list_kmers_found_in_multiple_samples.nf"
 include { BUILD_KMERS_TABLE                    } from "../modules/build_kmers_table.nf"
-
+include { CONVERT_KMERS_TABLE_TO_PLINK         } from "../modules/convert_kmers_table_to_plink.nf"
 
 /*
  * Workflow
@@ -118,12 +129,14 @@ workflow {
         kmc_count_combined_ch.collect(),
         kmers_list_ch
     )
+if (params.run_convert_kmers_table_to_plink) {
+    CONVERT_KMERS_TABLE_TO_PLINK(
+        kmers_table_ch,
+        phenotype_channel,
+        kmers_gwas_paths_ch
+    )
 }
 
-
-workflow.onComplete {
-    log.info ( workflow.success ? "\nSuccess" : "Failure" )
-}
 
 workflow.onComplete {
     log.info ( workflow.success ? "\nSuccess" : "Failure" )
