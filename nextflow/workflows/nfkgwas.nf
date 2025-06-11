@@ -39,9 +39,10 @@ Channel
     .set { samples_meta_ch }
 
 Channel
-    .fromPath(params.phenotypes_samplesheet) // Path to your phenotype samplesheet
-    .splitCsv(sep: '\t', header: true) // Assuming tab-separated with a header
-    .map { row -> tuple(row.pheno_name, file(row.pheno_path)) } // Map pheno_name to the val and pheno_path to the file
+    .fromPath(params.phenotypes_samplesheet)
+    .splitCsv(sep: '\t', header: true)
+    .map { row -> tuple(row.pheno_name, file(row.pheno_path)) }
+    .view()
     .set { phenotype_channel }
 
 /*
@@ -69,47 +70,29 @@ workflow {
     KMC_COUNT_CANONIZED(read_paths_ch)
     KMC_COUNT_ALL(read_paths_ch)
 
-    KMC_COUNT_CANONIZED.out.view() // Add view for Canonized output
-    KMC_COUNT_ALL.out.view()       // Add view for All output
-
-    // kmc_count_ch collects outputs after both KMC processes finish for a sample
     kmc_count_ch = KMC_COUNT_CANONIZED.out.join(KMC_COUNT_ALL.out, by:[0])
 
-    //kmc_count_ch.view()
-
-    // Create a channel with just accession_id and individual fastq file paths from samples_meta_ch
-    // This channel will be joined with kmc_count_ch to trigger cleanup after KMC
     fastq_paths_for_cleanup_ch = samples_meta_ch
         .flatMap { accession_id, metas ->
             metas.collect { meta -> tuple(accession_id, meta.file) }
         }
-        // .view() // Debug: see what this channel contains
 
     // Optional cleanup - now triggered by the completion of KMC processes
     log.info "params.cleanup_fastq is: ${params.cleanup_fastq}"
     if (params.cleanup_fastq) {
 
-        // Create a channel emitting [accession_id, list_of_fastq_file_objects] per sample
         samples_fastq_files_ch = samples_meta_ch
             .map { accession_id, metas ->
-                def fastq_files = metas.collect { it.file } // Extract file objects into a list
+                def fastq_files = metas.collect { it.file }
                 tuple(accession_id, fastq_files)
             }
-            // .view() // Debug: see what this channel contains
-
-        // Join kmc_count_ch (emits when KMC for a sample is done)
-        // with samples_fastq_files_ch (emits list of files for a sample) by accession_id
-        // This ensures cleanup is triggered only after KMC processes complete for a sample
         kmc_count_ch
             .join(samples_fastq_files_ch, by:[0])
             .map { accession_id, kmc_canon_pre, kmc_canon_suf, kmc_canon_out, kmc_all_pre, kmc_all_suf, kmc_all_out, fastq_files_list ->
-                // We only need accession_id and fastq_files_list for cleanup
                 tuple(accession_id, fastq_files_list)
             }
-            // .view() // Debug: see what is being passed to CLEANUP_FASTQ
-            .set { fastq_cleanup_ch_triggered } // Channel name for the cleanup input
+            .set { fastq_cleanup_ch_triggered }
 
-        // Feed the triggered channel to the CLEANUP_FASTQ process
         CLEANUP_FASTQ(fastq_cleanup_ch_triggered)
     }
 
@@ -120,6 +103,7 @@ workflow {
         kmers_gwas_paths_ch,
         kmc_count_ch
     )
+    kmc_count_combined_ch.view()
     kmers_list_ch = LIST_KMERS_FOUND_IN_MULTIPLE_SAMPLES(
         kmers_gwas_paths_ch,
         kmc_count_combined_ch.collect()
@@ -129,12 +113,18 @@ workflow {
         kmc_count_combined_ch.collect(),
         kmers_list_ch
     )
-if (params.run_convert_kmers_table_to_plink) {
-    CONVERT_KMERS_TABLE_TO_PLINK(
-        kmers_table_ch,
-        phenotype_channel,
-        kmers_gwas_paths_ch
-    )
+    kmers_table_ch.view()
+    if (params.run_convert_kmers_table_to_plink) {
+        (bed_ch, bim_ch, fam_ch, log_file_ch) = CONVERT_KMERS_TABLE_TO_PLINK(
+            kmers_table_ch,
+            phenotype_channel,
+            kmers_gwas_paths_ch
+        )
+        bed_ch.view()
+        bim_ch.view()
+        fam_ch.view()
+        log_file_ch.view()
+    }
 }
 
 
