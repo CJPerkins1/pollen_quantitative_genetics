@@ -14,11 +14,11 @@ params.run_convert_kmers_table_to_plink = false
 log.info """\
     NF - K - M E R S - G W A S   P I P E L I N E
     ============================================
-    samplesheet  : ${params.samplesheet}
-    phenotypes   : ${params.phenotypes_samplesheet}
-    outdir       : ${params.outdir}
-    cleanup      : ${params.cleanup_fastq}
-    unique_kmers : ${params.only_unique_kmers}
+    samplesheet    : ${params.samplesheet}
+    phenotypes     : ${params.phenotypes_samplesheet}
+    outdir         : ${params.outdir}
+    cleanup        : ${params.cleanup_fastq}
+    unique_kmers   : ${params.only_unique_kmers}
     kmers_to_plink : ${params.run_convert_kmers_table_to_plink}
     """
     .stripIndent()
@@ -59,6 +59,7 @@ include { COMBINE_KMC_COUNT                    } from "../modules/combine_kmc_co
 include { LIST_KMERS_FOUND_IN_MULTIPLE_SAMPLES } from "../modules/list_kmers_found_in_multiple_samples.nf"
 include { BUILD_KMERS_TABLE                    } from "../modules/build_kmers_table.nf"
 include { CONVERT_KMERS_TABLE_TO_PLINK         } from "../modules/convert_kmers_table_to_plink.nf"
+include { GENERATE_KINSHIP_MATRIX              } from "../modules/generate_kinship_matrix.nf"
 
 /*
  * Workflow
@@ -113,7 +114,11 @@ workflow {
         kmc_count_combined_ch.collect(),
         kmers_list_ch
     )
-    kmers_table_ch.view()
+    kinship_matrix_ch = GENERATE_KINSHIP_MATRIX(
+        kmers_table_ch,
+        kmers_gwas_paths_ch
+    )
+    kinship_matrix_ch.view()
     if (params.run_convert_kmers_table_to_plink) {
         (bed_ch, bim_ch, fam_ch, log_file_ch) = CONVERT_KMERS_TABLE_TO_PLINK(
             kmers_table_ch,
