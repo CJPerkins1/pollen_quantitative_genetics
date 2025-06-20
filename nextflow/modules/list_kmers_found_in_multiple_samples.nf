@@ -5,7 +5,7 @@ process LIST_KMERS_FOUND_IN_MULTIPLE_SAMPLES {
 
     tag "LIST_KMERS_FOUND_IN_MULTIPLE_SAMPLES "
     
-    publishDir "${params.outdir}/results/kmers_found_in_multiple_samples", mode: 'link'
+    publishDir "${params.outdir}/results/kmers_found_in_multiple_samples", mode: 'symlink'
 
     input:
     path kmers_gwas_base_dir
@@ -17,7 +17,13 @@ process LIST_KMERS_FOUND_IN_MULTIPLE_SAMPLES {
     script:
     """
     export LD_LIBRARY_PATH=$CONDA_PREFIX/lib
-    for f in *_kmers_with_strand; do echo -e "\$f\t\$(basename \$f | cut -c1-6)"; done > kmers_list_paths.txt
+    ls *_kmers_with_strand | awk -F'_' '{
+        if (\$1 ~ /^[A-Z]/) {
+            print \$0 "\\t" \$1
+        } else if (\$1 ~ /^[a-z]/) {
+            print \$0 "\\t" \$1"_"\$2
+        }
+    }' > kmers_list_paths.txt
     ${kmers_gwas_base_dir}/bin/list_kmers_found_in_multiple_samples -l kmers_list_paths.txt -k 31 --mac 2 -p 0.2 -o kmers_to_use
     """
 }

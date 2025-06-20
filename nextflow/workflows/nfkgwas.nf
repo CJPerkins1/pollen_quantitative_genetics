@@ -4,8 +4,8 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
-params.samplesheet = "${projectDir}/../samplesheets/test_samplesheet.tsv"
-params.phenotypes_samplesheet = "${projectDir}/../samplesheets/nf_test_pheno.tsv"
+params.samplesheet = "${projectDir}/../samplesheets/test/ecoli_samplesheet.tsv"
+params.phenotypes_samplesheet = "${projectDir}/../samplesheets/test/phenos.tsv"
 params.cleanup_fastq = false
 params.outdir = "." // Defaults to where the script is run
 params.only_unique_kmers = false
@@ -35,14 +35,12 @@ Channel
         tuple(row.accession_id, [file: file(row.fq), paired_end: row.paired_end, srr_id: row.srr_id])
     }
     .groupTuple(by: [0])
-    .view()
     .set { samples_meta_ch }
 
 Channel
     .fromPath(params.phenotypes_samplesheet)
     .splitCsv(sep: '\t', header: true)
     .map { row -> tuple(row.pheno_name, file(row.pheno_path)) }
-    .view()
     .set { phenotype_channel }
 
 /*
@@ -60,6 +58,7 @@ include { LIST_KMERS_FOUND_IN_MULTIPLE_SAMPLES } from "../modules/list_kmers_fou
 include { BUILD_KMERS_TABLE                    } from "../modules/build_kmers_table.nf"
 include { CONVERT_KMERS_TABLE_TO_PLINK         } from "../modules/convert_kmers_table_to_plink.nf"
 include { GENERATE_KINSHIP_MATRIX              } from "../modules/generate_kinship_matrix.nf"
+include { KMERS_GWAS                           } from "../modules/kmers_gwas.nf"
 
 /*
  * Workflow
@@ -109,16 +108,34 @@ workflow {
         kmers_gwas_paths_ch,
         kmc_count_combined_ch.collect()
     )
+    kmers_list_ch.view { list_file ->
+        log.info "K-mers found in multiple samples: ${list_file}"
+        if (list_file instanceof Path) {
+            def preview = list_file.text.readLines().take(10).join('\n')
+            log.info "First 10 lines of k-mers list:\n${preview}"
+        }
+    }
     kmers_table_ch = BUILD_KMERS_TABLE(
         kmers_gwas_paths_ch,
         kmc_count_combined_ch.collect(),
         kmers_list_ch
     )
+    kmers_table_ch.view { table_file ->
+        log.info "K-mers table built: ${table_file}"
+    }
     kinship_matrix_ch = GENERATE_KINSHIP_MATRIX(
         kmers_table_ch,
         kmers_gwas_paths_ch
     )
-    kinship_matrix_ch.view()
+    kinship_matrix_ch.view { matrix_file ->
+        log.info "Kinship matrix generated: ${matrix_file}"
+    }
+    KMERS_GWAS(
+        kmers_table_ch,
+        kmers_gwas_paths_ch,
+        phenotype_channel,
+        kinship_matrix_ch
+    )
     if (params.run_convert_kmers_table_to_plink) {
         (bed_ch, bim_ch, fam_ch, log_file_ch) = CONVERT_KMERS_TABLE_TO_PLINK(
             kmers_table_ch,

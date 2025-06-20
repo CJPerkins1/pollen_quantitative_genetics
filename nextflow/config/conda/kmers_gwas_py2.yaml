@@ -1,0 +1,13 @@
+name: kmers_gwas_py2
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - libiconv=1.17
+  - libgcc=7.2.0
+  - python=2.7.15
+  - r=3.5.1
+  - r-base=3.5.1
+  - r-mass=7.3
+  - r-matrixcalc=1.0
