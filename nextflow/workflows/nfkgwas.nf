@@ -6,6 +6,7 @@
 
 params.samplesheet = "${projectDir}/../samplesheets/test/ecoli_samplesheet.tsv"
 params.phenotypes_samplesheet = "${projectDir}/../samplesheets/test/phenos.tsv"
+params.reference_genome = "${projectDir}/../genomes/test/CP026474.1.fa"
 params.cleanup_fastq = false
 params.outdir = "." // Defaults to where the script is run
 params.only_unique_kmers = false
@@ -16,6 +17,7 @@ log.info """\
     ============================================
     samplesheet    : ${params.samplesheet}
     phenotypes     : ${params.phenotypes_samplesheet}
+    reference      : ${params.reference_genome}
     outdir         : ${params.outdir}
     cleanup        : ${params.cleanup_fastq}
     unique_kmers   : ${params.only_unique_kmers}
@@ -43,6 +45,10 @@ Channel
     .map { row -> tuple(row.pheno_name, file(row.pheno_path)) }
     .set { phenotype_channel }
 
+Channel
+    .fromPath(params.reference_genome)
+    .set { ref_genome_ch }
+
 /*
  * Loading modules
 */
@@ -59,6 +65,9 @@ include { BUILD_KMERS_TABLE                    } from "../modules/build_kmers_ta
 include { CONVERT_KMERS_TABLE_TO_PLINK         } from "../modules/convert_kmers_table_to_plink.nf"
 include { GENERATE_KINSHIP_MATRIX              } from "../modules/generate_kinship_matrix.nf"
 include { KMERS_GWAS                           } from "../modules/kmers_gwas.nf"
+include { FETCH_KMERS                          } from "../modules/fetch_kmers.nf"
+include { BOWTIE2_BUILD                        } from "../modules/bowtie2_build.nf"
+include { ALIGN_KMERS; SAM_TO_BAM; BAM_SORT    } from "../modules/align_kmers.nf"
 
 /*
  * Workflow
@@ -66,6 +75,7 @@ include { KMERS_GWAS                           } from "../modules/kmers_gwas.nf"
 
 workflow {
     kmers_gwas_paths_ch = INSTALL_KMERS_GWAS()
+    bowtie2_index_ch = BOWTIE2_BUILD(ref_genome_ch)
     read_paths_ch = MAKE_KMC_READ_PATHS_FILE(samples_meta_ch)
     KMC_COUNT_CANONIZED(read_paths_ch)
     KMC_COUNT_ALL(read_paths_ch)
@@ -130,11 +140,30 @@ workflow {
     kinship_matrix_ch.view { matrix_file ->
         log.info "Kinship matrix generated: ${matrix_file}"
     }
-    KMERS_GWAS(
+    kmers_gwas_out_ch = KMERS_GWAS(
         kmers_table_ch,
         kmers_gwas_paths_ch,
         phenotype_channel,
         kinship_matrix_ch
+    )
+    fetch_kmers_inputs = kmers_gwas_out_ch
+        .map { pheno_dir ->
+            def pheno = pheno_dir.getName() // or use .getBaseName() if needed
+            def pass_threshold_file = file("${pheno_dir}/kmers/pass_threshold_5per")
+            tuple(pheno, pass_threshold_file)
+        }
+    FETCH_KMERS(
+        fetch_kmers_inputs
+    )
+    ALIGN_KMERS(
+        FETCH_KMERS.out.kmers_fa,
+        bowtie2_index_ch
+    )
+    SAM_TO_BAM(
+        ALIGN_KMERS.out.sam
+    )
+    BAM_SORT(
+        SAM_TO_BAM.out.bam
     )
     if (params.run_convert_kmers_table_to_plink) {
         (bed_ch, bim_ch, fam_ch, log_file_ch) = CONVERT_KMERS_TABLE_TO_PLINK(
